@@ -7,23 +7,24 @@
 <meta name="description" content="Coffee house, Italian artisan gelateria and wine bar at 812 Jefferson Street, Downtown Lafayette. House made gelato, full espresso menu, artisan teas, crepes, gluten free pastries, wine and craft cocktails.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Antonio:wght@300;400&family=Azeret+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=EB+Garamond:ital,wght@0,400..500;1,400..500&family=Pinyon+Script&family=Azeret+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F6E3CF;   /* day canvas, type on dark */
-  --brick:#3A1F1A;   /* the dark: type by day, evening field, night canvas */
-  --linen:#EBD3BC;   /* alternate light band */
-  --fern:#6E7348;    /* the green field: gelato and syrups */
+  --paper:#EFE6D6;   /* day canvas, type on dark */
+  --brick:#2E2118;   /* the dark: type by day, evening field, night canvas */
+  --linen:#E3D6BF;   /* alternate light band */
+  --fern:#2F4232;    /* the green field: gelato and syrups */
   --brass:#E0A93B;   /* the sun / moon marker, nothing else */
-  --ash:#D9BFA5;     /* hairlines */
+  --ash:#CDBB9C;     /* hairlines */
   --bg:var(--paper); --ink:var(--brick); --band:var(--linen); --rule:var(--ash);
-  --serif:"Fraunces", "Iowan Old Style", Georgia, serif;
+  --serif:"EB Garamond", "Iowan Old Style", Georgia, serif;
+  --script:"Pinyon Script", "Snell Roundhand", cursive;
   --mono:"Azeret Mono", ui-monospace, monospace;
-  --display:"Antonio", "Arial Narrow", sans-serif;
+  --display:"Bodoni Moda", "Didot", "Bodoni 72", serif;
   --ease:cubic-bezier(0.16, 1, 0.3, 1);
   --pad:clamp(20px, 4vw, 56px);
 }
-html[data-mode="night"]{ --bg:#2B1513; --ink:#F6E3CF; --band:#3A1D1A; --rule:#5A3A33; }
+html[data-mode="night"]{ --bg:#1E261F; --ink:#EFE6D6; --band:#28322A; --rule:#3F4A3F; }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip}
 body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.45;font-variation-settings:"opsz" 14;font-variant-numeric:lining-nums tabular-nums;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .65s var(--ease),color .65s var(--ease)}
@@ -88,11 +89,13 @@ form{border-top:1px solid var(--ink);margin-top:14px}
 .solid{background:var(--ink);color:var(--band);border-color:var(--ink)}
 
 /* ===== BELOW THE HERO: cream, olive, oxblood ===== */
-main,.foot{--cream:#F6E3CF;--olive:#6E7348;--wine:#4A1D1A;--clay:#B5583A;--measure:1280px;position:relative}
+main,.foot{--cream:#EFE6D6;--olive:#2F4232;--wine:#4A3121;--clay:#8E6239;--measure:1280px;position:relative}
 main .wrap,.foot .wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--pad)}
-.hd{font-family:var(--display);font-weight:300;text-transform:uppercase;letter-spacing:.02em;line-height:.98;font-size:clamp(44px,5.6vw,82px)}
+.hd{font-family:var(--display);font-weight:400;font-variation-settings:"opsz" 96;text-transform:uppercase;letter-spacing:-.005em;line-height:.98;font-size:clamp(40px,5vw,74px)}
 .hd.sm{font-size:clamp(34px,3.6vw,52px)}
-main .micro{display:block;margin-bottom:18px;opacity:.8}
+main .micro{display:block;margin-bottom:10px;font-family:var(--script);font-style:normal;font-size:clamp(24px,2vw,30px);line-height:1.2;letter-spacing:0;opacity:.92}
+.nav > .micro{font-family:var(--script);font-style:normal;font-size:24px}
+body{font-size:19px}
 main p{text-wrap:pretty}
 main .lede{font-size:clamp(17px,1.3vw,19px);line-height:1.6;max-width:42ch}
 main form{border-top:none;margin-top:0}
@@ -114,7 +117,7 @@ main .btn:hover{background:var(--clay)}
 .reel .btn{margin-top:34px;background:var(--cream);color:var(--wine)}
 .reel .btn:hover{background:#fff}
 .stage{position:relative;width:min(420px,80vw)}
-.player{position:relative;aspect-ratio:3/4;overflow:hidden;background:#3c3f27;cursor:pointer}
+.player{position:relative;aspect-ratio:3/4;overflow:hidden;background:#1f2c21;cursor:pointer}
 .player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s var(--ease)}
 .player video.fade{opacity:0}
 .bars{position:absolute;left:14px;right:14px;top:14px;display:flex;gap:6px;z-index:2}
@@ -140,7 +143,7 @@ main .btn:hover{background:var(--clay)}
 .mphoto figcaption{font-size:14px;font-style:italic;opacity:.7;margin-top:12px}
 .panel{columns:2;column-gap:clamp(36px,4.5vw,68px)}
 .panel .group{break-inside:avoid;margin-bottom:48px}
-.panel h3{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.06em;font-size:17px;color:var(--clay);margin-bottom:8px}
+.panel h3{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.05em;font-size:16px;color:var(--clay);margin-bottom:8px}
 .gnote{font-size:14px;opacity:.7;margin-bottom:6px;font-style:italic}
 .casenote{column-span:all;background:var(--band);padding:18px 22px;margin-bottom:40px;font-size:16px;line-height:1.5}
 .casenote i{opacity:.7}
@@ -168,13 +171,13 @@ html[data-mode="night"] main .add.solo,html[data-mode="night"] .addrow .add::bef
 /* 4. QUOTE: oxblood block beside the green wall */
 .quote{display:grid;grid-template-columns:1fr 1fr;background:var(--wine);color:var(--cream);min-height:min(92vh,860px)}
 .quote .txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(70px,8vw,120px) clamp(28px,6vw,100px)}
-.quote .hd{color:#E9A27F;max-width:13ch}
+.quote .hd{color:#D9B48A;max-width:13ch}
 .quote p{margin-top:30px;max-width:40ch;opacity:.85;line-height:1.6}
 .quote .frame{background:#2b3a28}
 @media (max-width:860px){.quote{grid-template-columns:1fr}.quote .frame{height:70vh}}
 
 /* 5. CAKES: collage plus a quiet form */
-.cakes{background:var(--cream);color:#3A1F1A;--ink:#3A1F1A;--rule:#D9BFA5;--bg:var(--cream);padding:clamp(100px,11vw,160px) 0}
+.cakes{background:var(--cream);color:#2E2118;--ink:#2E2118;--rule:#CDBB9C;--bg:var(--cream);padding:clamp(100px,11vw,160px) 0}
 .cakes .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(50px,7vw,120px);align-items:start}
 .cakes .hd{color:var(--clay)}
 .collage{position:relative;padding:0 18% 22% 0}
@@ -191,14 +194,14 @@ html[data-mode="night"] main .add.solo,html[data-mode="night"] .addrow .add::bef
 .field input:focus,.field textarea:focus,.field select:focus{border-bottom-color:var(--clay)}
 .field textarea{resize:vertical;min-height:50px}
 .seg{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.seg label{position:relative;cursor:pointer;font-size:15px;font-style:normal;opacity:1;padding:7px 15px;border-radius:2px;background:#EBD3BC;transition:background-color .25s var(--ease),color .25s var(--ease)}
+.seg label{position:relative;cursor:pointer;font-size:15px;font-style:normal;opacity:1;padding:7px 15px;border-radius:2px;background:#E3D6BF;transition:background-color .25s var(--ease),color .25s var(--ease)}
 .seg input{position:absolute;opacity:0;pointer-events:none}
 .seg label:has(input:checked){background:var(--olive);color:var(--cream)}
 .req .actions{grid-column:1/-1;display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:26px}
 .req .fine{grid-column:1/-1;font-size:14px;opacity:.65;font-style:italic;margin-top:8px}
-.confirm{display:none;margin-top:22px;background:#EBD3BC;padding:24px}
+.confirm{display:none;margin-top:22px;background:#E3D6BF;padding:24px}
 .confirm.show{display:block}
-.confirm b{font-family:var(--display);font-weight:300;font-size:40px;display:block;line-height:1;margin-top:4px;color:var(--clay)}
+.confirm b{font-family:var(--display);font-weight:400;font-size:40px;display:block;line-height:1;margin-top:4px;color:var(--clay)}
 @media (max-width:900px){.cakes .wrap{grid-template-columns:1fr}.req{grid-template-columns:1fr}}
 
 /* 6. VISIT on olive */
@@ -212,7 +215,7 @@ html[data-mode="night"] main .add.solo,html[data-mode="night"] .addrow .add::bef
 .visit table{width:100%;max-width:440px;border-collapse:collapse;margin-top:40px}
 .visit td{padding:10px 0;border-bottom:1px solid var(--rule);font-size:16px}
 .visit td.t{text-align:right}
-.visit tr.today td{font-style:italic;color:#F3C9A9}
+.visit tr.today td{font-style:italic;color:#D9B48A}
 .visit tr.today td:first-child::after{content:", today";opacity:.75}
 @media (max-width:900px){.visit .wrap{grid-template-columns:1fr}}
 
@@ -458,8 +461,8 @@ html[data-mode="night"] main .add.solo,html[data-mode="night"] .addrow .add::bef
 <section class="visit" id="visit">
   <div class="wrap">
     <div class="pics">
-      <div class="frame a"><img src="img/bar.jpg" alt="The bar with brass sconces, wine shelves and tea tins along the counter" loading="lazy"></div>
-      <div class="frame b"><img src="img/sipping.jpg" alt="A guest sipping a latte at the window table" loading="lazy"></div>
+      <div class="frame a"><img src="img/interior-tins.jpg" alt="The dining room in afternoon light, tea tins along the counter and ferns in the windows" loading="lazy"></div>
+      <div class="frame b"><img src="img/team.jpg" alt="The Carpe Diem team behind the bar" loading="lazy"></div>
     </div>
     <div>
       <span class="micro">Visit us</span>
@@ -578,8 +581,8 @@ var BAR = [
   {g:"Beer", items:[I("Parish Envie APA",4),I("Paradise Park",5)]}
 ];
 MENU["Wine & bar"] = BAR;
-var PHOTO = {"Coffee":"img/cappuccino.jpg","Tea & cocoa":"img/matcha.jpg","Crêpes & food":"img/crepe.jpg","Gelato":"img/gelato-case.jpg","Wine & bar":"img/bar.jpg"};
-var CAP = {"Coffee":"A cappuccino with a dusting of cocoa.","Tea & cocoa":"Apple cinnamon matcha latte.","Crêpes & food":"Egg, prosciutto and gouda.","Gelato":"Today's case, made in house.","Wine & bar":"The bar, lit for the evening."};
+var PHOTO = {"Coffee":"img/cappuccino.jpg","Tea & cocoa":"img/matcha.jpg","Crêpes & food":"img/crepe.jpg","Gelato":"img/gelato-hat.jpg","Wine & bar":"img/bar.jpg"};
+var CAP = {"Coffee":"A cappuccino with a dusting of cocoa.","Tea & cocoa":"Apple cinnamon matcha latte.","Crêpes & food":"Egg, prosciutto and gouda.","Gelato":"A scoop at the booth, made in house.","Wine & bar":"The bar, lit for the evening."};
 var ITEMS = {};
 function slug(s){ return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
 Object.keys(MENU).forEach(function(tab){
@@ -1081,7 +1084,7 @@ document.addEventListener('click', function(e){
    VIDEO SLIDESHOW
    ============================================================ */
 (function(){
-  var CLIPS = [['video/clip2.mp4','video/clip2.jpg','Matcha, cinnamon on top.'],['video/clip3.mp4','video/clip3.jpg','Gelato from this morning\'s batch.'],['video/clip4.mp4','video/clip4.jpg','Cold foam, poured slow.'],['video/clip1.mp4','video/clip1.jpg','A slow coffee and a slice of cake.']];
+  var CLIPS = [['video/clip2.mp4','video/clip2.jpg','Matcha, cinnamon on top.'],['video/clip3.mp4','video/clip3.jpg','Gelato from this morning\'s batch.'],['video/clip5.mp4','video/clip5.jpg','New: gelato macaron sandwiches.'],['video/clip4.mp4','video/clip4.jpg','Cold foam, poured slow.'],['video/clip1.mp4','video/clip1.jpg','A slow coffee and a slice of cake.']];
   var v = $('#reelA'), bars = $('#bars'), cap = $('#reelCap'), player = $('#player'); if (!v) return;
   var i = 0, visible = false, still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   bars.innerHTML = CLIPS.map(function(){ return '<span><i></i></span>'; }).join('');
