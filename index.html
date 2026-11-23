@@ -418,6 +418,27 @@ main .btn:disabled{opacity:.6;cursor:default}
 .track i{position:absolute;top:-.5px;height:2px;background:#D9B48A;transition:left .25s linear,width .25s linear}
 @media (max-width:700px){.reel .rnav{display:flex}.reel .rnav button{display:none}.clip{flex-basis:68vw}.clip:nth-child(even){margin-top:40px}}
 
+
+/* ===== REEL, MINIMAL ===== */
+.reel{background:#26342A;padding:clamp(110px,12vw,160px) 0 clamp(100px,11vw,150px)}
+.reel::before{opacity:.35}
+.reel::after{content:none}
+.reel .rhead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;text-align:left;margin-bottom:clamp(44px,4.5vw,64px)}
+.reel .rhead .micro{color:#D9B48A;opacity:.85}
+.reel .rhead .hd::after{margin-left:0}
+.strip{align-items:stretch;gap:clamp(14px,1.4vw,20px);padding-bottom:0}
+.clip,.clip:nth-child(even){flex:0 0 clamp(240px,22vw,310px);margin-top:0}
+.clip .frame{aspect-ratio:4/5;border-radius:0;box-shadow:none;background:#1d2820}
+.clip .frame::after{content:none}
+.clip video{filter:saturate(.88) contrast(1.03) sepia(.06);transition:transform 1.6s var(--ease),filter .6s var(--ease)}
+.clip:hover video{transform:scale(1.035);filter:none}
+.clip figcaption{text-align:left;margin-top:14px;font-size:15px;opacity:.7;transition:opacity .4s var(--ease)}
+.clip:hover figcaption{opacity:1}
+.clip .prog{height:1px;opacity:.9}
+.reel .rnav{margin:0 0 6px;gap:18px}
+.track{width:120px}
+@media (max-width:700px){.reel .rhead{flex-direction:column;align-items:flex-start}.reel .rnav button{display:none}.track{width:100px}.clip,.clip:nth-child(even){flex-basis:72vw}}
+
 /* the order button, square and brass */
 button.cartpill{border-radius:0;background:#2E2118;color:#EFE6D6;border:1px solid rgba(176,141,87,.7);padding:16px 24px;font-family:var(--label);font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 18px 40px -18px rgba(0,0,0,.6)}
 button.cartpill span:last-child{font-family:var(--display);font-size:15px;letter-spacing:.02em;text-transform:none;color:#D9B48A}
@@ -686,8 +707,12 @@ div.toast{border-radius:0;background:#2E2118;color:#EFE6D6;border:1px solid rgba
 
 <section class="reel" aria-label="Short clips from the cafe">
   <div class="wrap rhead">
-    <span class="micro">From our Instagram</span>
-    <h2 class="hd">A day on Jefferson Street</h2>
+    <div><span class="micro">From our Instagram</span><h2 class="hd">A day on Jefferson Street</h2></div>
+    <div class="rnav">
+      <button type="button" id="rPrev" aria-label="Previous clips">&larr;</button>
+      <span class="track" aria-hidden="true"><i id="rTrack"></i></span>
+      <button type="button" id="rNext" aria-label="Next clips">&rarr;</button>
+    </div>
   </div>
   <div class="strip" id="strip">
     <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip2.jpg" src="video/clip2.mp4"></video></div><figcaption>Matcha, cinnamon on top</figcaption></figure>
@@ -695,11 +720,6 @@ div.toast{border-radius:0;background:#2E2118;color:#EFE6D6;border:1px solid rgba
     <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip5.jpg" src="video/clip5.mp4"></video></div><figcaption>New: gelato macaron sandwiches</figcaption></figure>
     <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip4.jpg" src="video/clip4.mp4"></video></div><figcaption>Cold foam, poured slow</figcaption></figure>
     <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip1.jpg" src="video/clip1.mp4"></video></div><figcaption>A slow coffee and a slice of cake</figcaption></figure>
-  </div>
-  <div class="wrap rnav">
-    <button type="button" id="rPrev" aria-label="Previous clips">&larr;</button>
-    <span class="track" aria-hidden="true"><i id="rTrack"></i></span>
-    <button type="button" id="rNext" aria-label="Next clips">&rarr;</button>
   </div>
 </section>
 
