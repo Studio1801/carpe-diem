@@ -5,7 +5,8 @@ Demo website and owner dashboard for Carpe Diem (812 Jefferson St, Lafayette, LA
 ## What's in the folder
 
 - `index.html`: the whole site, with its styles and code in one file
-- `img/`: 15 photos and the white logo, taken from carpediemcafeandwinebar.com (get the owner's OK before going live)
+- `img/`: photos and the white logo, from carpediemcafeandwinebar.com and their Instagram (get the owner's OK before going live)
+- `video/`: four short Instagram clips for the slideshow under the hero, re-encoded for the web, each with a poster frame
 
 To preview it, open `index.html` in a browser.
 

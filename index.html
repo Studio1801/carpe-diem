@@ -7,22 +7,23 @@
 <meta name="description" content="Coffee house, Italian artisan gelateria and wine bar at 812 Jefferson Street, Downtown Lafayette. House made gelato, full espresso menu, artisan teas, crepes, gluten free pastries, wine and craft cocktails.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Azeret+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Antonio:wght@300;400&family=Azeret+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#EDEBE3;   /* day canvas, type on dark */
-  --brick:#171A16;   /* the dark: type by day, evening field, night canvas */
-  --linen:#E1DCCD;   /* alternate light band */
-  --fern:#2C3B27;    /* the green field: gelato and syrups */
+  --paper:#F6E3CF;   /* day canvas, type on dark */
+  --brick:#3A1F1A;   /* the dark: type by day, evening field, night canvas */
+  --linen:#EBD3BC;   /* alternate light band */
+  --fern:#6E7348;    /* the green field: gelato and syrups */
   --brass:#E0A93B;   /* the sun / moon marker, nothing else */
-  --ash:#BDB7A6;     /* hairlines */
+  --ash:#D9BFA5;     /* hairlines */
   --bg:var(--paper); --ink:var(--brick); --band:var(--linen); --rule:var(--ash);
   --serif:"Fraunces", "Iowan Old Style", Georgia, serif;
   --mono:"Azeret Mono", ui-monospace, monospace;
+  --display:"Antonio", "Arial Narrow", sans-serif;
   --ease:cubic-bezier(0.16, 1, 0.3, 1);
   --pad:clamp(20px, 4vw, 56px);
 }
-html[data-mode="night"]{ --bg:#171A16; --ink:#EDEBE3; --band:#20241F; --rule:#3E443B; }
+html[data-mode="night"]{ --bg:#2B1513; --ink:#F6E3CF; --band:#3A1D1A; --rule:#5A3A33; }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip}
 body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.45;font-variation-settings:"opsz" 14;font-variant-numeric:lining-nums tabular-nums;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .65s var(--ease),color .65s var(--ease)}
@@ -86,210 +87,151 @@ form{border-top:1px solid var(--ink);margin-top:14px}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;align-items:center}
 .solid{background:var(--ink);color:var(--band);border-color:var(--ink)}
 
-/* ===== BELOW THE HERO ===== */
-main{--measure:1320px}
-main .wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--pad)}
-main h2.disp{font-size:clamp(46px,5.4vw,84px);line-height:.95;letter-spacing:-.025em;font-weight:330}
-main h2.disp em{font-weight:300}
-main .lede{font-size:clamp(19px,1.5vw,21px);line-height:1.55;max-width:46ch}
+/* ===== BELOW THE HERO: cream, olive, oxblood ===== */
+main,.foot{--cream:#F6E3CF;--olive:#6E7348;--wine:#4A1D1A;--clay:#B5583A;--measure:1280px;position:relative}
+main .wrap,.foot .wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--pad)}
+.hd{font-family:var(--display);font-weight:300;text-transform:uppercase;letter-spacing:.02em;line-height:.98;font-size:clamp(44px,5.6vw,82px)}
+.hd.sm{font-size:clamp(34px,3.6vw,52px)}
+main .micro{display:block;margin-bottom:18px;opacity:.8}
 main p{text-wrap:pretty}
+main .lede{font-size:clamp(17px,1.3vw,19px);line-height:1.6;max-width:42ch}
 main form{border-top:none;margin-top:0}
-main .pill{border:none;border-radius:0;padding:0 0 2px;font-size:16px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;transition:text-underline-offset .3s var(--ease)}
-main .pill:hover{text-underline-offset:3px}
-main .pill.solid,main .btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg);border-radius:9999px;padding:14px 26px;text-decoration:none;font-size:16px;transition:opacity .3s var(--ease)}
-main .pill.solid:hover,main .btn:hover{opacity:.86}
 main figure{margin:0}
-main figcaption{font-size:14px;font-style:italic;opacity:.72;margin-top:12px;line-height:1.4}
-main figcaption b{font-style:normal;font-weight:400;opacity:1}
-.frame{overflow:hidden;background:var(--band)}
-.frame img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease)}
-.frame:hover img{transform:scale(1.025)}
+main .pill{border:none;border-radius:0;padding:0 0 2px;font-size:15px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;transition:text-underline-offset .3s var(--ease)}
+main .pill:hover{text-underline-offset:3px}
+main .btn{display:inline-flex;align-items:center;background:var(--wine);color:var(--cream);border-radius:2px;padding:13px 24px;font-size:15px;letter-spacing:.01em;text-decoration:none;transition:background-color .3s var(--ease)}
+main .btn:hover{background:var(--clay)}
+.frame{overflow:hidden;background:rgba(0,0,0,.06)}
+.frame img,.frame video{width:100%;height:100%;object-fit:cover;display:block}
+/* paper grain over the cream sections */
+.grain{position:relative;isolation:isolate}
+.grain::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.35;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .25  0 0 0 0 .18  0 0 0 .22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 
-/* MENU: section two, a printed card you can order from */
-.menu{padding:clamp(90px,10vw,150px) 0 clamp(80px,9vw,130px)}
-.mhead{display:grid;grid-template-columns:1fr minmax(280px,420px);gap:40px 80px;align-items:end;margin-bottom:56px}
-.mhead .micro{display:block;margin-bottom:18px}
-.mhead .side p{font-size:17px;line-height:1.55;opacity:.85}
-.mhead .side .pill{margin-top:18px;display:inline-block}
-.tabs{display:flex;flex-wrap:wrap;gap:6px 34px;border-bottom:1px solid var(--rule);margin-bottom:60px}
-.tabs button{font-size:clamp(20px,1.8vw,25px);letter-spacing:-.01em;padding:0 0 16px;margin-bottom:-1px;border-bottom:1px solid transparent;opacity:.55;transition:opacity .3s var(--ease)}
+/* 2. REEL: olive block, the slideshow */
+.reel{background:var(--olive);color:var(--cream);padding:clamp(80px,9vw,130px) 0}
+.reel .wrap{display:grid;grid-template-columns:1fr auto;gap:clamp(40px,7vw,120px);align-items:center}
+.reel .lede{margin-top:26px;opacity:.9}
+.reel .btn{margin-top:34px;background:var(--cream);color:var(--wine)}
+.reel .btn:hover{background:#fff}
+.stage{position:relative;width:min(420px,80vw)}
+.player{position:relative;aspect-ratio:3/4;overflow:hidden;background:#3c3f27;cursor:pointer}
+.player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s var(--ease)}
+.player video.fade{opacity:0}
+.bars{position:absolute;left:14px;right:14px;top:14px;display:flex;gap:6px;z-index:2}
+.bars span{flex:1;height:2px;background:rgba(246,227,207,.35);overflow:hidden}
+.bars i{display:block;height:100%;width:0;background:var(--cream)}
+.stage .still{position:absolute;left:-34%;bottom:-48px;width:46%;aspect-ratio:1/1;outline:10px solid var(--olive)}
+.stage figcaption{text-align:right;margin-top:16px;font-size:14px;font-style:italic;opacity:.8;min-height:20px}
+@media (max-width:860px){.reel .wrap{grid-template-columns:1fr}.stage{margin:0 auto}.stage .still{display:none}}
+
+/* 3. MENU on cream */
+.menu{background:var(--bg);padding:clamp(90px,10vw,140px) 0}
+.menu .hd{color:var(--clay)}
+.mhead{display:grid;grid-template-columns:1fr minmax(260px,400px);gap:30px 80px;align-items:end;margin-bottom:50px}
+.mhead .side p{font-size:16px;line-height:1.6;opacity:.85}
+.mhead .side .pill{margin-top:14px;display:inline-block}
+.tabs{display:flex;flex-wrap:wrap;gap:6px 32px;border-bottom:1px solid var(--rule);margin-bottom:56px}
+.tabs button{font-size:clamp(18px,1.6vw,22px);padding:0 0 14px;margin-bottom:-1px;border-bottom:2px solid transparent;opacity:.55;transition:opacity .3s var(--ease)}
 .tabs button:hover{opacity:.9}
-.tabs button[aria-selected="true"]{opacity:1;font-style:italic;border-bottom-color:var(--ink)}
-.mbody{display:grid;grid-template-columns:minmax(240px,.62fr) 1.6fr;gap:clamp(36px,6vw,100px);align-items:start}
-.mphoto{position:sticky;top:40px}
+.tabs button[aria-selected="true"]{opacity:1;font-style:italic;border-bottom-color:var(--clay)}
+.mbody{display:grid;grid-template-columns:minmax(230px,.6fr) 1.6fr;gap:clamp(36px,6vw,96px);align-items:start}
+.mphoto{position:sticky;top:30px}
 .mphoto .frame{aspect-ratio:4/5}
-.panel{columns:2;column-gap:clamp(36px,4.5vw,72px)}
-.panel .group{break-inside:avoid;margin-bottom:54px}
-.panel h3{font-weight:400;font-style:italic;font-size:clamp(26px,2.2vw,32px);letter-spacing:-.01em;line-height:1.1;margin-bottom:6px}
-.gnote{font-size:15px;opacity:.7;margin-bottom:8px;font-style:italic}
-.item{display:grid;grid-template-columns:1fr auto;column-gap:14px;row-gap:2px;padding:13px 0;align-items:baseline}
+.mphoto figcaption{font-size:14px;font-style:italic;opacity:.7;margin-top:12px}
+.panel{columns:2;column-gap:clamp(36px,4.5vw,68px)}
+.panel .group{break-inside:avoid;margin-bottom:48px}
+.panel h3{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.06em;font-size:17px;color:var(--clay);margin-bottom:8px}
+.gnote{font-size:14px;opacity:.7;margin-bottom:6px;font-style:italic}
+.casenote{column-span:all;background:var(--band);padding:18px 22px;margin-bottom:40px;font-size:16px;line-height:1.5}
+.casenote i{opacity:.7}
+.casenote s{opacity:.5}
+.item{display:grid;grid-template-columns:1fr auto;column-gap:14px;row-gap:2px;padding:11px 0;align-items:baseline}
 .item.can{grid-template-columns:1fr auto auto}
-.item b{font-weight:400;font-size:18px;display:flex;align-items:baseline;gap:10px;min-width:0}
+.item b{font-weight:400;font-size:17px;display:flex;align-items:baseline;gap:10px;min-width:0}
 .item b::after{content:"";flex:1;min-width:16px;border-bottom:1px dotted var(--rule);transform:translateY(-4px)}
-.item .p{font-size:17px;white-space:nowrap;font-variant-numeric:lining-nums tabular-nums}
-.item small{grid-column:1/-1;font-size:15px;opacity:.68;max-width:44ch;line-height:1.45;font-style:italic}
+.item .p{font-size:16px;white-space:nowrap}
+.item small{grid-column:1/-1;font-size:14px;opacity:.68;max-width:44ch;line-height:1.45;font-style:italic}
 .item.off b,.item.off .p{text-decoration:line-through;opacity:.45}
-.offtag{font-size:14px;font-style:italic;opacity:.6}
-.add{display:inline-flex;align-items:center;justify-content:center;font-size:14px;line-height:1;white-space:nowrap;transition:background-color .25s var(--ease),color .25s var(--ease)}
-.add.solo{width:28px;height:28px;border-radius:9999px;background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:15px;align-self:center}
-.add.solo:hover{opacity:.8}
+.offtag{font-size:13px;font-style:italic;opacity:.6}
+.add{display:inline-flex;align-items:center;justify-content:center;font-size:14px;line-height:1;white-space:nowrap}
+.add.solo{width:26px;height:26px;border-radius:9999px;background:var(--wine);color:var(--cream);font-family:var(--mono);font-size:14px;align-self:center;transition:background-color .25s var(--ease)}
+.add.solo:hover{background:var(--clay)}
 .addrow{grid-column:1/-1;display:flex;gap:18px;flex-wrap:wrap;margin-top:6px;order:3}
 .addrow .add{gap:8px;font-style:italic}
-.addrow .add::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:9999px;background:var(--ink);color:var(--bg);font-style:normal;font-family:var(--mono);font-size:13px}
+.addrow .add::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:9999px;background:var(--wine);color:var(--cream);font-style:normal;font-family:var(--mono);font-size:13px}
 .item.can:has(.addrow){grid-template-columns:1fr auto}
-.panel .fine{font-size:15px;font-style:italic;opacity:.7;column-span:all}
-@media (max-width:1180px){.panel{columns:1}}
+.panel .fine{font-size:14px;font-style:italic;opacity:.7;column-span:all}
+html[data-mode="night"] main .add.solo,html[data-mode="night"] .addrow .add::before{background:var(--cream);color:var(--wine)}
+@media (max-width:1150px){.panel{columns:1}}
 @media (max-width:860px){.mhead{grid-template-columns:1fr}.mbody{grid-template-columns:1fr}.mphoto{display:none}.tabs{gap:4px 22px;overflow-x:auto;flex-wrap:nowrap}.tabs button{white-space:nowrap}}
 
-/* STORY: the day, told in four photographs */
-.story{background:var(--band);padding:clamp(100px,11vw,170px) 0 clamp(90px,10vw,150px)}
-.story .top{display:grid;grid-template-columns:1.25fr 1fr;gap:40px 90px;align-items:end;margin-bottom:clamp(60px,7vw,110px)}
-.story .top .micro{display:block;margin-bottom:20px}
-.hours4{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(16px,2vw,32px);align-items:start}
-.hours4 figure:nth-child(1){grid-column:1/5}
-.hours4 figure:nth-child(2){grid-column:5/8;margin-top:140px}
-.hours4 figure:nth-child(3){grid-column:8/10;margin-top:40px}
-.hours4 figure:nth-child(4){grid-column:10/13;margin-top:200px}
-.hours4 .frame{aspect-ratio:4/5}
-.hours4 figure:nth-child(3) .frame{aspect-ratio:3/4}
-.hours4 figcaption{opacity:1;font-style:normal}
-.hours4 figcaption i{display:block;opacity:.6;font-size:14px;margin-bottom:2px}
-.hours4 figcaption span{font-size:17px}
-.hours4 figure.on figcaption i::after{content:", now";color:inherit}
-@media (max-width:860px){.story .top{grid-template-columns:1fr}.hours4{grid-template-columns:1fr 1fr;row-gap:36px}.hours4 figure:nth-child(n){grid-column:auto;margin-top:0}.hours4 figure:nth-child(even){margin-top:50px}}
+/* 4. QUOTE: oxblood block beside the green wall */
+.quote{display:grid;grid-template-columns:1fr 1fr;background:var(--wine);color:var(--cream);min-height:min(92vh,860px)}
+.quote .txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(70px,8vw,120px) clamp(28px,6vw,100px)}
+.quote .hd{color:#E9A27F;max-width:13ch}
+.quote p{margin-top:30px;max-width:40ch;opacity:.85;line-height:1.6}
+.quote .frame{background:#2b3a28}
+@media (max-width:860px){.quote{grid-template-columns:1fr}.quote .frame{height:70vh}}
 
-/* GELATO on the fern green */
-.gelato{background:var(--fern);color:#EDEBE3;--ink:#EDEBE3;--bg:#2C3B27;--rule:rgba(237,235,227,.28);padding:clamp(100px,11vw,170px) 0}
-.gelato .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(50px,8vw,140px);align-items:center}
-.gpics{position:relative;padding-bottom:90px}
-.gpics .main{aspect-ratio:4/5;width:82%}
-.gpics .inset{position:absolute;right:0;bottom:0;width:42%;aspect-ratio:4/5;outline:10px solid var(--fern)}
-.gelato .micro{display:block;margin-bottom:20px}
-.gelato .lede{margin-top:28px}
-.case{list-style:none;margin:44px 0 0;border-top:1px solid var(--rule)}
-.case li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 0;border-bottom:1px solid var(--rule)}
-.case li b{font-weight:400;font-style:italic;font-size:clamp(22px,2vw,28px);letter-spacing:-.01em}
-.case li span{font-size:15px;opacity:.65}
-.case li.out b{text-decoration:line-through;opacity:.5}
-.casemeta{font-size:14px;font-style:italic;opacity:.6;margin-top:12px}
-.scoops{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:40px}
-.scoops div{font-size:15px;opacity:.75}
-.scoops b{display:block;font-weight:330;font-size:34px;letter-spacing:-.02em;opacity:1;color:#EDEBE3;line-height:1.1}
-.gelato .foot{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:center;margin-top:46px}
-.award{font-size:14px;font-style:italic;opacity:.65}
-@media (max-width:900px){.gelato .wrap{grid-template-columns:1fr}.gpics{max-width:520px}}
-
-/* CAKES */
-.cakes{padding:clamp(100px,11vw,170px) 0}
+/* 5. CAKES: collage plus a quiet form */
+.cakes{background:var(--cream);color:#3A1F1A;--ink:#3A1F1A;--rule:#D9BFA5;--bg:var(--cream);padding:clamp(100px,11vw,160px) 0}
 .cakes .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(50px,7vw,120px);align-items:start}
-.cakes .pics{position:sticky;top:40px}
-.cakes .pics .frame{aspect-ratio:4/5}
-.cakes .pics .row{display:grid;grid-template-columns:.8fr 1fr;gap:24px;margin-top:24px;align-items:end}
-.cakes .pics .row .frame{aspect-ratio:1/1}
-.cakes .micro{display:block;margin-bottom:20px}
-.cakes .lede{margin-top:28px}
-.contact{display:flex;flex-wrap:wrap;gap:10px 36px;margin-top:30px;font-size:18px}
+.cakes .hd{color:var(--clay)}
+.collage{position:relative;padding:0 18% 22% 0}
+.collage .a{aspect-ratio:4/5}
+.collage .b{position:absolute;right:0;bottom:0;width:46%;aspect-ratio:3/4;outline:10px solid var(--cream)}
+.cakes .lede{margin-top:24px}
+.contact{display:flex;flex-wrap:wrap;gap:8px 30px;margin-top:22px;font-size:16px}
 .contact a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
-.reqcard{background:var(--band);padding:clamp(26px,3vw,44px);margin-top:54px}
-.reqcard h3{font-weight:400;font-size:28px;letter-spacing:-.01em;margin-bottom:6px}
-.reqcard > p{font-size:15px;opacity:.7;font-style:italic}
-.req{display:grid;grid-template-columns:1fr 1fr;gap:4px 28px;margin-top:22px}
-.field{display:flex;flex-direction:column;gap:2px;padding:14px 0 0}
+.req{display:grid;grid-template-columns:1fr 1fr;gap:2px 26px;margin-top:44px}
+.field{display:flex;flex-direction:column;gap:2px;padding:12px 0 0}
 .field.full{grid-column:1/-1}
 .field label,.field .lbl{font-size:14px;font-style:italic;opacity:.7}
-.field input,.field textarea,.field select{font:inherit;font-size:18px;color:inherit;background:transparent;border:none;border-bottom:1px solid var(--rule);outline:none;width:100%;padding:8px 0;border-radius:0;color-scheme:light dark;transition:border-color .25s var(--ease)}
-.field input:focus,.field textarea:focus,.field select:focus{border-bottom-color:var(--ink)}
-.field textarea{resize:vertical;min-height:54px;font-size:17px}
+.field input,.field textarea,.field select{font:inherit;font-size:17px;color:inherit;background:transparent;border:none;border-bottom:1px solid var(--rule);outline:none;width:100%;padding:8px 0;border-radius:0;transition:border-color .25s var(--ease)}
+.field input:focus,.field textarea:focus,.field select:focus{border-bottom-color:var(--clay)}
+.field textarea{resize:vertical;min-height:50px}
 .seg{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.seg label{position:relative;cursor:pointer;font-size:16px;font-style:normal;opacity:1;padding:8px 16px;border-radius:9999px;background:var(--bg);transition:background-color .25s var(--ease),color .25s var(--ease)}
+.seg label{position:relative;cursor:pointer;font-size:15px;font-style:normal;opacity:1;padding:7px 15px;border-radius:2px;background:#EBD3BC;transition:background-color .25s var(--ease),color .25s var(--ease)}
 .seg input{position:absolute;opacity:0;pointer-events:none}
-.seg label:has(input:checked){background:var(--ink);color:var(--bg)}
-.req .actions{grid-column:1/-1;display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:28px}
-.req .fine{grid-column:1/-1;font-size:14px;opacity:.65;font-style:italic;margin-top:10px}
-.confirm{display:none;margin-top:22px;background:var(--bg);padding:26px}
+.seg label:has(input:checked){background:var(--olive);color:var(--cream)}
+.req .actions{grid-column:1/-1;display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:26px}
+.req .fine{grid-column:1/-1;font-size:14px;opacity:.65;font-style:italic;margin-top:8px}
+.confirm{display:none;margin-top:22px;background:#EBD3BC;padding:24px}
 .confirm.show{display:block}
-.confirm b{font-weight:330;font-size:44px;letter-spacing:-.02em;display:block;line-height:1;margin-top:4px}
-@media (max-width:900px){.cakes .wrap{grid-template-columns:1fr}.cakes .pics{position:static;max-width:560px}.req{grid-template-columns:1fr}}
+.confirm b{font-family:var(--display);font-weight:300;font-size:40px;display:block;line-height:1;margin-top:4px;color:var(--clay)}
+@media (max-width:900px){.cakes .wrap{grid-template-columns:1fr}.req{grid-template-columns:1fr}}
 
-/* EVENING, the bar */
-.evening{background:#171A16;color:#EDEBE3;--ink:#EDEBE3;--bg:#171A16;--rule:rgba(237,235,227,.18);padding:clamp(100px,11vw,170px) 0}
-.evening .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(50px,7vw,120px);align-items:start}
-.evening .micro{display:block;margin-bottom:20px}
-.evening .lede{margin-top:28px;opacity:.85}
-.till{display:flex;align-items:baseline;gap:18px;margin-top:34px;font-size:15px;opacity:.75;font-style:italic}
-.till b{white-space:nowrap;font-weight:300;font-style:normal;font-size:64px;letter-spacing:-.03em;line-height:1;opacity:1}
-#barList{columns:2;column-gap:56px;margin-top:64px}
-#barList .group{break-inside:avoid;margin-bottom:44px}
-#barList h4{font-weight:400;font-style:italic;font-size:24px;margin-bottom:4px}
-#barList .item b{font-size:17px}
-.evening .pics{position:sticky;top:40px;padding-top:60px}
-.evening .pics .a{aspect-ratio:4/5;width:78%;margin-left:auto}
-.evening .pics .b{aspect-ratio:4/5;width:46%;margin-top:-34%;position:relative;outline:10px solid #171A16}
-.evening .pics figcaption{max-width:30ch}
-@media (max-width:1000px){#barList{columns:1}}
-@media (max-width:900px){.evening .wrap{grid-template-columns:1fr}.evening .pics{position:static;max-width:520px;padding-top:0}}
+/* 6. VISIT on olive */
+.visit{background:var(--olive);color:var(--cream);--rule:rgba(246,227,207,.3);padding:clamp(100px,11vw,150px) 0}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(50px,7vw,120px);align-items:center}
+.visit .pics{position:relative;padding:0 0 18% 16%}
+.visit .pics .a{aspect-ratio:4/3}
+.visit .pics .b{position:absolute;left:0;bottom:0;width:40%;aspect-ratio:1/1;outline:10px solid var(--olive)}
+.visit .lede{margin-top:22px}
+.visit .meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:24px}
+.visit table{width:100%;max-width:440px;border-collapse:collapse;margin-top:40px}
+.visit td{padding:10px 0;border-bottom:1px solid var(--rule);font-size:16px}
+.visit td.t{text-align:right}
+.visit tr.today td{font-style:italic;color:#F3C9A9}
+.visit tr.today td:first-child::after{content:", today";opacity:.75}
+@media (max-width:900px){.visit .wrap{grid-template-columns:1fr}}
 
-/* EVENTS */
-.events{padding:clamp(100px,11vw,160px) 0}
-.events .wrap{display:grid;grid-template-columns:.8fr 1.6fr;gap:clamp(40px,6vw,110px);align-items:start}
-.events .micro{display:block;margin-bottom:20px}
-.events .lede{margin-top:24px;font-size:18px}
-.ev{display:grid;grid-template-columns:96px 1fr auto;gap:28px;padding:30px 0;border-top:1px solid var(--rule);align-items:start}
-.ev:last-child{border-bottom:1px solid var(--rule)}
-.ev .date{font-size:14px;font-style:italic;opacity:.7}
-.ev .date b{display:block;font-weight:330;font-style:normal;font-size:52px;line-height:.9;letter-spacing:-.03em;opacity:1;color:var(--ink);margin-top:2px}
-.ev h3{font-weight:400;font-size:26px;letter-spacing:-.01em;line-height:1.15}
-.ev p{font-size:16px;opacity:.8;margin-top:8px;max-width:50ch}
-.ev .left{font-size:14px;font-style:italic;opacity:.65;margin-top:12px;display:block}
-.ev form{grid-column:2/-1;display:none;gap:14px;flex-wrap:wrap;align-items:end;margin-top:4px}
-.ev form.show{display:flex}
-.ev form input{font:inherit;font-size:17px;color:inherit;background:transparent;border:none;border-bottom:1px solid var(--rule);padding:8px 0;outline:none;flex:1 1 160px;border-radius:0}
-.ev form input[type=number]{flex:0 0 70px}
-.ev .ok{grid-column:2/-1;font-style:italic}
-.sample{font-size:13px;font-style:italic;opacity:.55;margin-left:10px;font-weight:400}
-@media (max-width:900px){.events .wrap{grid-template-columns:1fr}.ev{grid-template-columns:70px 1fr}.ev .act{grid-column:2}.ev .date b{font-size:40px}}
-
-/* VISIT + QUESTIONS */
-.visit{background:var(--band);padding:clamp(100px,11vw,160px) 0}
-.visit .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(50px,7vw,120px);align-items:start}
-.visit .frame{aspect-ratio:4/5}
-.visit .micro{display:block;margin-bottom:20px}
-.visit .lede{margin-top:24px}
-.visit .meta{display:flex;gap:28px;flex-wrap:wrap;align-items:center;margin-top:30px;font-size:17px}
-.visit table{width:100%;max-width:520px;border-collapse:collapse;margin-top:54px}
-.visit td{padding:11px 0;border-bottom:1px solid var(--rule);font-size:17px}
-.visit td.t{text-align:right;font-variant-numeric:lining-nums tabular-nums}
-.visit tr.today td{font-style:italic}
-.visit tr.today td:first-child::after{content:", today";opacity:.6}
-.visit .hnote{margin-top:14px;font-size:14px;font-style:italic;opacity:.65}
-.faq{margin-top:clamp(90px,10vw,140px);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(50px,7vw,120px)}
-.faq h2.disp{font-size:clamp(38px,3.6vw,56px)}
-.faq details{border-bottom:1px solid var(--rule)}
-.faq details:first-child{border-top:1px solid var(--rule)}
-.faq summary{list-style:none;cursor:pointer;padding:19px 0;font-size:clamp(19px,1.6vw,22px);display:flex;justify-content:space-between;gap:20px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:var(--mono);font-size:16px;opacity:.6;transition:transform .3s var(--ease)}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq details[open] summary{font-style:italic}
-.faq details p{padding:0 0 22px;max-width:54ch;opacity:.85}
-@media (max-width:900px){.visit .wrap,.faq{grid-template-columns:1fr}.visit .frame{max-width:520px;aspect-ratio:4/3}}
-
-/* CLOSING on the dark */
-.closing{background:#171A16;color:#EDEBE3;--ink:#EDEBE3;--bg:#171A16;padding:clamp(110px,12vw,170px) 0 70px;text-align:center}
-.closing img.logo{width:120px;height:auto;margin:0 auto 46px;opacity:.95}
-.closing h2.disp{max-width:16ch;margin:0 auto}
-.closing .lede{margin:24px auto 0;opacity:.8}
-.news{display:flex;gap:14px;max-width:500px;margin:40px auto 0;align-items:center}
-.news input{flex:1;font:inherit;font-size:18px;color:inherit;background:transparent;border:none;border-bottom:1px solid rgba(237,235,227,.4);padding:12px 0;outline:none;border-radius:0}
-.newsmsg{margin-top:14px;font-style:italic;min-height:24px;opacity:.8}
-.closing .ig{display:inline-block;margin-top:18px}
-footer{background:#171A16;color:#EDEBE3;padding:28px var(--pad) 34px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px;opacity:1;border-top:1px solid rgba(237,235,227,.14)}
-footer span:first-child{opacity:.6}
-footer .fl{display:flex;gap:24px}
-footer a{text-decoration:none;opacity:.75}
-footer a:hover{opacity:1}
-@media (max-width:560px){.news{flex-direction:column;align-items:stretch}}
-
+/* 7. FOOTER in oxblood */
+.foot{background:var(--wine);color:var(--cream);padding:clamp(80px,9vw,120px) 0 30px}
+.foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:start}
+.foot .logo{width:110px;height:auto;margin:0 auto}
+.foot nav{display:flex;flex-direction:column;gap:8px;font-size:15px}
+.foot nav a{text-decoration:none;opacity:.8}
+.foot nav a:hover{opacity:1}
+.foot .newsbox{justify-self:end;max-width:340px;width:100%}
+.foot .newsbox p{font-size:15px;opacity:.8}
+.news{border-top:none;display:flex;gap:10px;margin-top:16px;align-items:center}
+.news input{flex:1;min-width:0;font:inherit;font-size:16px;color:inherit;background:transparent;border:none;border-bottom:1px solid rgba(246,227,207,.4);padding:10px 0;outline:none;border-radius:0}
+.foot .btn{display:inline-flex;border-radius:2px;font-size:15px;background:var(--cream);color:var(--wine);padding:10px 18px}
+.newsmsg{margin-top:10px;font-style:italic;min-height:22px;font-size:14px;opacity:.8}
+.foot .base{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:70px;padding-top:22px;border-top:1px solid rgba(246,227,207,.18);font-size:13px;opacity:.65}
+.foot .base a{text-decoration:none}
+@media (max-width:860px){.foot .wrap{grid-template-columns:1fr;text-align:left}.foot .logo{margin:0}.foot .newsbox{justify-self:start}}
 
 /* LEGAL */
 .legal{display:none;position:fixed;inset:0;background:var(--bg);z-index:20;overflow-y:auto;padding:100px var(--pad) 120px}
@@ -399,9 +341,8 @@ footer a:hover{opacity:1}
   <span class="micro">Cafe, gelateria &amp; wine bar</span>
   <div class="links">
     <a href="#menu">Menu</a>
-    <a href="#gelato">Gelato</a>
+    <a href="#menu" data-tab="Gelato">Gelato</a>
     <a href="#cakes">Cakes</a>
-    <a href="#events">Events</a>
     <a href="#visit">Visit</a>
     <div class="toggle" role="group" aria-label="Day or night view">
       <button type="button" id="bDay" aria-pressed="true">Day</button>
@@ -433,151 +374,98 @@ footer a:hover{opacity:1}
 
 <main>
 
-<section class="menu" id="menu">
+<section class="reel" aria-label="Moments at Carpe Diem">
+  <div class="wrap">
+    <div>
+      <span class="micro">A day on Jefferson Street</span>
+      <h2 class="hd">Poured, scooped<br>and served by hand</h2>
+      <p class="lede">Matcha with a cinnamon dusting, gelato from this morning's batch, cold foam poured slow. A coffee house, an Italian gelateria and a wine bar under one roof in Downtown Lafayette.</p>
+      <a class="btn" href="#menu">See the menu</a>
+    </div>
+    <figure class="stage">
+      <div class="player" id="player" aria-label="Slideshow of short clips from the cafe. Click for the next clip.">
+        <div class="bars" id="bars"></div>
+        <video id="reelA" muted playsinline preload="metadata" poster="video/clip1.jpg"></video>
+      </div>
+      <div class="frame still"><img src="img/latte-window.jpg" alt="A latte with a rosetta on the concrete window ledge" loading="lazy"></div>
+      <figcaption id="reelCap"></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="menu grain" id="menu">
   <div class="wrap">
     <div class="mhead">
-      <div>
-        <span class="micro">Order ahead, pick up at the counter</span>
-        <h2 class="disp">The <em>menu.</em></h2>
-      </div>
+      <div><span class="micro">Order ahead, pick up at the counter</span><h2 class="hd">The menu</h2></div>
       <div class="side">
-        <p>Tap + on anything from the counter, choose a pickup time and pay when you collect. We text you the moment it's ready.</p>
+        <p>Tap + on anything from the counter, pick a time and pay when you collect. We text you when it's ready.</p>
         <a class="pill" href="#menu" data-open-order>View your order</a>
       </div>
     </div>
     <div class="tabs" role="tablist" id="tabs" aria-label="Menu sections"></div>
     <div class="mbody">
-      <figure class="mphoto"><div class="frame"><img class="ph" id="mphoto" src="img/latte-jefferson.jpg" alt="" loading="lazy"></div><figcaption id="mcap"></figcaption></figure>
+      <figure class="mphoto"><div class="frame"><img class="ph" id="mphoto" src="img/cappuccino.jpg" alt="" loading="lazy"></div><figcaption id="mcap"></figcaption></figure>
       <div class="panel" id="panel" role="tabpanel" aria-live="polite">
-        <span class="skel block" style="width:40%;height:34px"></span>
-        <span class="skel block"></span><span class="skel block"></span><span class="skel block"></span><span class="skel block" style="width:70%"></span>
+        <span class="skel block" style="width:40%;height:30px"></span>
+        <span class="skel block"></span><span class="skel block"></span><span class="skel block" style="width:70%"></span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="story" aria-label="A day at Carpe Diem">
-  <div class="wrap">
-    <div class="top">
-      <div>
-        <span class="micro">Seize the day, on Jefferson Street</span>
-        <h2 class="disp">From the first <em>espresso</em> to the last glass.</h2>
-      </div>
-      <p class="lede">Sun on the ferns in the morning, gelato in the afternoon, the chandeliers lit by evening. A coffee house, an Italian artisan gelateria and a wine bar under one roof in Downtown Lafayette, locally owned and run.</p>
-    </div>
-    <div class="hours4" id="dayList">
-      <figure data-from="0" data-to="660"><div class="frame"><img class="ph" src="img/latte-jefferson.jpg" alt="A latte in a teal cup under the ferns outside Carpe Diem" loading="lazy"></div><figcaption><i>8 AM</i><span>A cortado under the ferns, gluten free pastries baked in house.</span></figcaption></figure>
-      <figure data-from="660" data-to="840"><div class="frame"><img class="ph" src="img/crepe.jpg" alt="An egg, prosciutto and gouda crepe" loading="lazy"></div><figcaption><i>11 AM</i><span>Crêpes, folded open so the yolks show.</span></figcaption></figure>
-      <figure data-from="840" data-to="1020"><div class="frame"><img class="ph" src="img/gelato-case.jpg" alt="The gelato case, pans of pistachio, berry and mint" loading="lazy"></div><figcaption><i>2 PM</i><span>Gelato from the case, or an affogato.</span></figcaption></figure>
-      <figure data-from="1020" data-to="1440"><div class="frame"><img class="ph" src="img/espresso-martini.jpg" alt="An espresso martini on the bar" loading="lazy"></div><figcaption><i>5 PM</i><span>The wine comes out, and the espresso goes into a martini.</span></figcaption></figure>
-    </div>
+<section class="quote" aria-label="About Carpe Diem">
+  <div class="txt">
+    <span class="micro">Seize the day</span>
+    <h2 class="hd">From the first espresso to the last glass</h2>
+    <p>Sun on the ferns in the morning, gelato in the afternoon, the chandeliers lit by evening. Locally owned and run, with gluten free pastries baked in house and macarons from France.</p>
   </div>
+  <div class="frame"><img src="img/green-wall.jpg" alt="Afternoon light across the green brick wall and a potted snake plant" loading="lazy"></div>
 </section>
 
-<section class="gelato" id="gelato" aria-label="Gelato">
+<section class="cakes grain" id="cakes" aria-label="Cakes and catering">
   <div class="wrap">
-    <div class="gpics">
-      <div class="frame main"><img class="ph" src="img/gelato-pans.jpg" alt="Pans of house made gelato in the case" loading="lazy"></div>
-      <div class="frame inset"><img class="ph" src="img/macarons.jpg" alt="Macarons imported from France" loading="lazy"></div>
+    <div class="collage">
+      <div class="frame a"><img src="img/cupcakes.jpg" alt="Vanilla cupcakes with sugared cranberries and rosemary" loading="lazy"></div>
+      <div class="frame b"><img src="img/burnt-honey-cake.jpg" alt="The burnt honey cake, cut to show its layers" loading="lazy"></div>
     </div>
     <div>
-      <span class="micro">Italian artisan gelateria</span>
-      <h2 class="disp">Gelato &amp; <em>sorbetto,</em> made here every day.</h2>
-      <p class="lede">Denser and silkier than ice cream, served a little warmer so the flavour arrives all at once. Made in house in small batches, so the case changes with the day. Macarons come in from France.</p>
-      <ul class="case" id="caseList" aria-label="In the case today"><li><span class="skel" style="width:40%"></span></li></ul>
-      <p class="casemeta" id="caseUpdated"></p>
-      <div class="scoops">
-        <div><b>4.50</b>One scoop</div>
-        <div><b>5.50</b>Two scoops</div>
-        <div><b>7</b>Three scoops</div>
-        <div><b>7.50</b>Affogato</div>
-      </div>
-      <div class="foot">
-        <button class="btn" type="button" data-tab="Gelato">Order gelato for pickup</button>
-        <span class="award">Avocado basil took a top award at the Gelato World Tour, Austin, 2014.</span>
-      </div>
+      <span class="micro">Cakes &amp; catering</span>
+      <h2 class="hd">Made for the occasion</h2>
+      <p class="lede">The burnt honey cake is our signature: thin honey layers, cream between every one. We also bake custom cakes and cater, from office mornings with an espresso bar to evenings with gelato and wine.</p>
+      <div class="contact"><a href="tel:+13372814453">(337) 281-4453</a><a href="mailto:carpediemwinebarmgmt@gmail.com">carpediemwinebarmgmt@gmail.com</a></div>
+      <form id="req" class="req" novalidate>
+        <div class="field full"><span class="lbl">What for</span><div class="seg">
+          <label><input type="radio" name="rType" value="Burnt honey cake" checked><span>Burnt honey cake</span></label>
+          <label><input type="radio" name="rType" value="Custom specialty cake"><span>Custom cake</span></label>
+          <label><input type="radio" name="rType" value="Catering"><span>Catering</span></label>
+        </div></div>
+        <div class="field" id="rSizeWrap"><label for="rSize">Size</label><select id="rSize"><option>6 inch, serves 8 to 10</option><option selected>8 inch, serves 12 to 16</option><option>10 inch, serves 20 to 30</option><option>Tiered, tell us below</option></select></div>
+        <div class="field" id="rGuestsWrap"><label for="rGuests">Guests</label><input id="rGuests" type="number" min="1" placeholder="How many"></div>
+        <div class="field"><label for="rDate">Needed on</label><input id="rDate" type="date"></div>
+        <div class="field full" id="rInsWrap"><label for="rIns">Written on the cake</label><input id="rIns" maxlength="40" placeholder="Happy birthday, Nina"></div>
+        <div class="field"><label for="rName">Name</label><input id="rName" autocomplete="name"></div>
+        <div class="field"><label for="rPhone">Phone</label><input id="rPhone" type="tel" autocomplete="tel"></div>
+        <div class="field full"><label for="rEmail">Email</label><input id="rEmail" type="email" autocomplete="email"></div>
+        <div class="field full"><label for="rNotes">Anything else</label><textarea id="rNotes" placeholder="Flavours, allergies, the occasion"></textarea></div>
+        <div class="actions"><button class="btn" type="submit">Send request</button><span class="err" id="rErr"></span></div>
+        <p class="fine">Cakes need at least three days. We reply with the price and deposit; nothing is charged here.</p>
+      </form>
+      <div class="confirm" id="reqOk" aria-live="polite"></div>
     </div>
-  </div>
-</section>
-
-<section class="cakes" id="cakes" aria-label="Specialty cakes and catering">
-  <div class="wrap">
-    <div class="pics">
-      <div class="frame"><img class="ph" src="img/burnt-honey-cake.jpg" alt="The signature burnt honey cake, cut to show its many layers" loading="lazy"></div>
-      <div class="row">
-        <div class="frame"><img class="ph" src="img/pastries.jpg" alt="Gluten free house made pastries in the afternoon sun" loading="lazy"></div>
-        <figcaption>Thin honey layers, cream between every one, crumbs on top.</figcaption>
-      </div>
-    </div>
-    <div>
-      <span class="micro">Specialty cakes &amp; catering</span>
-      <h2 class="disp">Burnt <em>honey</em> cake.</h2>
-      <p class="lede">Our signature, and the one people order for birthdays. We also make custom cakes and cater, from office mornings with an espresso bar to evenings with gelato and wine.</p>
-      <div class="contact">
-        <a href="tel:+13372814453">(337) 281-4453</a>
-        <a href="mailto:carpediemwinebarmgmt@gmail.com">carpediemwinebarmgmt@gmail.com</a>
-      </div>
-      <div class="reqcard">
-        <h3>Request a cake or <em>catering</em></h3>
-        <p>We reply by email with the price and deposit. Nothing is charged here.</p>
-        <form id="req" class="req" novalidate>
-          <div class="field full"><span class="lbl">What for</span><div class="seg">
-            <label><input type="radio" name="rType" value="Burnt honey cake" checked><span>Burnt honey cake</span></label>
-            <label><input type="radio" name="rType" value="Custom specialty cake"><span>Custom cake</span></label>
-            <label><input type="radio" name="rType" value="Catering"><span>Catering</span></label>
-          </div></div>
-          <div class="field" id="rSizeWrap"><label for="rSize">Size</label><select id="rSize"><option>6 inch, serves 8 to 10</option><option selected>8 inch, serves 12 to 16</option><option>10 inch, serves 20 to 30</option><option>Tiered, tell us below</option></select></div>
-          <div class="field" id="rGuestsWrap"><label for="rGuests">Guests</label><input id="rGuests" type="number" min="1" placeholder="How many"></div>
-          <div class="field"><label for="rDate">Needed on</label><input id="rDate" type="date"></div>
-          <div class="field full" id="rInsWrap"><label for="rIns">Written on the cake</label><input id="rIns" maxlength="40" placeholder="Happy birthday, Nina"></div>
-          <div class="field"><label for="rName">Your name</label><input id="rName" autocomplete="name"></div>
-          <div class="field"><label for="rPhone">Phone</label><input id="rPhone" type="tel" autocomplete="tel" placeholder="(337) 000-0000"></div>
-          <div class="field full"><label for="rEmail">Email</label><input id="rEmail" type="email" autocomplete="email"></div>
-          <div class="field full"><label for="rNotes">Anything else</label><textarea id="rNotes" placeholder="Flavours, allergies, the occasion"></textarea></div>
-          <div class="actions"><button class="btn" type="submit">Send request</button><span class="err" id="rErr"></span></div>
-          <p class="fine">Cakes need at least three days.</p>
-        </form>
-        <div class="confirm" id="reqOk" aria-live="polite"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="evening" id="evening">
-  <div class="wrap">
-    <div>
-      <span class="micro">After five</span>
-      <h2 class="disp">The same room, <em>lights down.</em></h2>
-      <p class="lede">The cafe turns wine bar. A Bordeaux by the glass, a lavender honey French 75, and an espresso martini made with the espresso we pulled that morning.</p>
-      <div class="till"><b>til 9</b><span>Tuesday to Saturday. Sunday and Monday until 8.</span></div>
-      <div id="barList"></div>
-    </div>
-    <div class="pics">
-      <div class="frame a"><img class="ph" src="img/windows-dark.jpg" alt="The dining room with the chandelier lit and ferns in the windows" loading="lazy"></div>
-      <div class="frame b"><img class="ph" src="img/hot-buttered-rum.jpg" alt="The signature hot buttered rum with a cinnamon stick" loading="lazy"></div>
-      <figcaption>Hot buttered rum, a house signature in the colder months.</figcaption>
-    </div>
-  </div>
-</section>
-
-<section class="events" id="events">
-  <div class="wrap">
-    <div><span class="micro">At the shop</span><h2 class="disp">Coming <em>up.</em></h2><p class="lede">Tastings, pairings and slow mornings. Reserve a seat here and we'll hold it under your name.</p></div>
-    <div id="evList"><span class="skel block"></span><span class="skel block"></span><span class="skel block" style="width:60%"></span></div>
   </div>
 </section>
 
 <section class="visit" id="visit">
   <div class="wrap">
-    <div class="frame"><img class="ph" src="img/ferns-sign.jpg" alt="The Carpe Diem sign and hanging ferns on Jefferson Street" loading="lazy"></div>
+    <div class="pics">
+      <div class="frame a"><img src="img/bar.jpg" alt="The bar with brass sconces, wine shelves and tea tins along the counter" loading="lazy"></div>
+      <div class="frame b"><img src="img/sipping.jpg" alt="A guest sipping a latte at the window table" loading="lazy"></div>
+    </div>
     <div>
-      <span class="micro">Visit</span>
-      <h2 class="disp">812 Jefferson <em>Street.</em></h2>
-      <p class="lede">Downtown Lafayette, Louisiana 70501. Look for the ferns. Walk in any time we're open.</p>
-      <div class="meta">
-        <a class="pill" href="https://maps.google.com/?q=812+Jefferson+St+Lafayette+LA+70501">Get directions</a>
-        <a class="pill" href="tel:+13372814453">(337) 281-4453</a>
-      </div>
+      <span class="micro">Visit us</span>
+      <h2 class="hd">812 Jefferson Street</h2>
+      <p class="lede">Downtown Lafayette, Louisiana 70501. Look for the ferns, and walk in any time we're open.</p>
+      <div class="meta"><a class="pill" href="https://maps.google.com/?q=812+Jefferson+St+Lafayette+LA+70501">Get directions</a><a class="pill" href="tel:+13372814453">(337) 281-4453</a></div>
       <table id="hours" aria-label="Opening hours">
         <tr data-d="1"><td>Monday</td><td class="t">8 AM to 8 PM</td></tr>
         <tr data-d="2"><td>Tuesday</td><td class="t">8 AM to 9 PM</td></tr>
@@ -587,38 +475,23 @@ footer a:hover{opacity:1}
         <tr data-d="6"><td>Saturday</td><td class="t">9 AM to 9 PM</td></tr>
         <tr data-d="0"><td>Sunday</td><td class="t">9 AM to 8 PM</td></tr>
       </table>
-      <p class="hnote">Holiday hours go up on our Instagram.</p>
     </div>
-    <div class="faq" style="grid-column:1/-1">
-      <h2 class="disp">Good <em>questions.</em></h2>
-      <div class="qs">
-        <details><summary>Can I order ahead?</summary><p>Yes. Tap + next to anything on the menu, choose a pickup time and pay at the counter when you collect. We'll text you when it's ready.</p></details>
-        <details><summary>Do you have gluten free options?</summary><p>Yes. Our pastries are gluten free and baked in house. Please ask at the counter about anything else.</p></details>
-        <details><summary>What milks do you have?</summary><p>Whole milk, organic half and half, and oat, pistachio, almond and cashew. Non dairy and half and half are 1.00 extra.</p></details>
-        <details><summary>Is there anything vegan?</summary><p>A vegan hot cocoa, plus sorbetto in the gelato case on most days. Ask what's in today.</p></details>
-        <details><summary>Do I need a reservation?</summary><p>No, it's walk in. For a larger group in the evening, give us a call first so we can make room.</p></details>
-        <details><summary>Do you check ID?</summary><p>Yes. Alcohol is served to guests 21 and over with a valid ID.</p></details>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="closing" aria-label="Newsletter and Instagram">
-  <div class="wrap">
-    <img class="logo" src="img/logo-white.png" alt="Carpe Diem" loading="lazy">
-    <h2 class="disp">Hear about new flavours <em>first.</em></h2>
-    <p class="lede">Today's case, new specials and events, about twice a month.</p>
-    <form class="news" id="newsForm" novalidate><input id="newsEmail" type="email" placeholder="Your email" aria-label="Email for the newsletter"><button class="btn" type="submit">Join</button></form>
-    <p class="newsmsg" id="newsMsg" aria-live="polite"></p>
-    <a class="pill ig" href="https://www.instagram.com/carpediemcafewinebar/">@carpediemcafewinebar on Instagram</a>
   </div>
 </section>
 
 </main>
 
-<footer>
-  <span>&copy; 2026 Carpe Diem Cafe &amp; Wine Bar, 812 Jefferson Street, Lafayette</span>
-  <span class="fl"><a href="#owner">Owner dashboard</a><a href="#terms">Terms</a><a href="#privacy">Privacy</a></span>
+<footer class="foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="#menu">Menu &amp; order ahead</a><a href="#cakes">Cakes &amp; catering</a><a href="#visit">Hours &amp; directions</a><a href="https://www.instagram.com/carpediemcafewinebar/">Instagram</a></nav>
+    <img class="logo" src="img/logo-white.png" alt="Carpe Diem" loading="lazy">
+    <div class="newsbox">
+      <p>New gelato flavours and events, about twice a month.</p>
+      <form class="news" id="newsForm" novalidate><input id="newsEmail" type="email" placeholder="Your email" aria-label="Email for the newsletter"><button class="btn" type="submit">Join</button></form>
+      <p class="newsmsg" id="newsMsg" aria-live="polite"></p>
+    </div>
+  </div>
+  <div class="wrap"><div class="base"><span>&copy; 2026 Carpe Diem Cafe &amp; Wine Bar, Lafayette</span><span style="display:flex;gap:20px"><a href="#owner">Owner dashboard</a><a href="#terms">Terms</a><a href="#privacy">Privacy</a></span></div></div>
 </footer>
 
 <button class="cartpill" id="cartpill" type="button" data-open-order></button>
@@ -705,8 +578,8 @@ var BAR = [
   {g:"Beer", items:[I("Parish Envie APA",4),I("Paradise Park",5)]}
 ];
 MENU["Wine & bar"] = BAR;
-var PHOTO = {"Coffee":"img/latte-jefferson.jpg","Tea & cocoa":"img/matcha.jpg","Crêpes & food":"img/crepe.jpg","Gelato":"img/gelato-case.jpg","Wine & bar":"img/espresso-martini.jpg"};
-var CAP = {"Coffee":"A latte on Jefferson Street.","Tea & cocoa":"Apple cinnamon matcha latte.","Crêpes & food":"Egg, prosciutto and gouda.","Gelato":"Today's case, made in house.","Wine & bar":"The espresso martini."};
+var PHOTO = {"Coffee":"img/cappuccino.jpg","Tea & cocoa":"img/matcha.jpg","Crêpes & food":"img/crepe.jpg","Gelato":"img/gelato-case.jpg","Wine & bar":"img/bar.jpg"};
+var CAP = {"Coffee":"A cappuccino with a dusting of cocoa.","Tea & cocoa":"Apple cinnamon matcha latte.","Crêpes & food":"Egg, prosciutto and gouda.","Gelato":"Today's case, made in house.","Wine & bar":"The bar, lit for the evening."};
 var ITEMS = {};
 function slug(s){ return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
 Object.keys(MENU).forEach(function(tab){
@@ -818,9 +691,10 @@ function groupHTML(gr, sub){
   return h + '</div>';
 }
 function renderMenu(){
-  panel.innerHTML = MENU[current].map(function(g){ return groupHTML(g,false); }).join('') +
+  var S0 = load(), cn = current === 'Gelato' ? '<p class="casenote"><i>In the case today:</i> ' + (S0.flavours.length ? S0.flavours.map(function(f){ return f.out ? '<s>'+esc(f.n)+'</s>' : esc(f.n); }).join(', ') : 'being filled, check back soon') + '.</p>' : '';
+  panel.innerHTML = cn + MENU[current].map(function(g){ return groupHTML(g,false); }).join('') +
     (current === 'Wine & bar' ? '<p class="fine">Drinks from the bar are served in house only, 21 and over, and are not sold online.</p>' : '');
-  mph.src = PHOTO[current]; $('#mcap').textContent = CAP[current] || '';
+  mph.src = PHOTO[current]; var mc = $('#mcap'); if (mc) mc.textContent = CAP[current] || '';
   $$('button', tabs).forEach(function(b){ b.setAttribute('aria-selected', b.dataset.n === current ? 'true':'false'); });
 }
 Object.keys(MENU).forEach(function(n,i){
@@ -830,7 +704,7 @@ Object.keys(MENU).forEach(function(n,i){
   b.addEventListener('click', function(){ current = n; renderMenu(); });
   tabs.appendChild(b);
 });
-function renderBar(){ $('#barList').innerHTML = BAR.map(function(g){ return groupHTML(g,true); }).join(''); }
+function renderBar(){ if (!$('#barList')) return; $('#barList').innerHTML = BAR.map(function(g){ return groupHTML(g,true); }).join(''); }
 
 /* ============================================================
    CART + ORDER AHEAD
@@ -938,6 +812,7 @@ function renderDrawer(){
    TODAY'S CASE
    ============================================================ */
 function renderCase(){
+  if (!$('#caseList')) return;
   var S = load(), fl = S.flavours;
   $('#caseList').innerHTML = fl.length ? fl.map(function(f){ return '<li class="'+(f.out?'out':'')+'"><b>'+esc(f.n)+'</b><span>'+esc(f.k)+(f.out?', sold out':'')+'</span></li>'; }).join('') : '<li><em>The case is being filled. Check back soon.</em></li>';
   $('#caseUpdated').textContent = 'In the case today, updated by the shop at ' + S.caseUpdated + '.';
@@ -982,7 +857,7 @@ var req = $('#req');
    ============================================================ */
 function upcoming(){ var t = laf().date; return load().events.filter(function(e){ return e.date >= t; }).sort(function(a,b){ return a.date < b.date ? -1 : 1; }); }
 function renderEvents(){
-  var list = upcoming(), box = $('#evList');
+  var list = upcoming(), box = $('#evList'); if (!box) return;
   if (!list.length) { box.innerHTML = '<p class="empty">No events on the calendar right now. Follow us on Instagram to hear first.</p>'; return; }
   box.innerHTML = list.map(function(ev){
     var d = new Date(ev.date+'T12:00:00Z'), left = ev.seats - ev.taken;
@@ -1201,6 +1076,35 @@ document.addEventListener('click', function(e){
     else toast('Demo: this link opens in the live site.');
   }
 }, true);
+
+/* ============================================================
+   VIDEO SLIDESHOW
+   ============================================================ */
+(function(){
+  var CLIPS = [['video/clip2.mp4','video/clip2.jpg','Matcha, cinnamon on top.'],['video/clip3.mp4','video/clip3.jpg','Gelato from this morning\'s batch.'],['video/clip4.mp4','video/clip4.jpg','Cold foam, poured slow.'],['video/clip1.mp4','video/clip1.jpg','A slow coffee and a slice of cake.']];
+  var v = $('#reelA'), bars = $('#bars'), cap = $('#reelCap'), player = $('#player'); if (!v) return;
+  var i = 0, visible = false, still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  bars.innerHTML = CLIPS.map(function(){ return '<span><i></i></span>'; }).join('');
+  var fills = $$('i', bars);
+  function show(n){
+    i = (n + CLIPS.length) % CLIPS.length;
+    fills.forEach(function(f,k){ f.style.width = k < i ? '100%' : '0'; });
+    v.classList.add('fade');
+    setTimeout(function(){
+      v.src = CLIPS[i][0]; v.poster = CLIPS[i][1]; cap.textContent = CLIPS[i][2];
+      v.classList.remove('fade');
+      if (visible && !still) { var pr = v.play(); if (pr && pr.catch) pr.catch(function(){}); }
+    }, 250);
+  }
+  v.addEventListener('timeupdate', function(){ if (v.duration) fills[i].style.width = (v.currentTime / v.duration * 100) + '%'; });
+  v.addEventListener('ended', function(){ show(i + 1); });
+  player.addEventListener('click', function(){ if (still && v.paused) { v.play(); return; } show(i + 1); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){ es.forEach(function(e){ visible = e.isIntersecting; if (visible && !still) { var pr = v.play(); if (pr && pr.catch) pr.catch(function(){}); } else v.pause(); }); }, {threshold:.35}).observe(player);
+  } else visible = true;
+  show(0);
+})();
+
 load(); renderAll(); route();
 setInterval(function(){ renderClock(); }, 30000);
 setInterval(function(){ if (drawer.classList.contains('open') && view === 'track') { mem = null; load(); renderDrawer(); renderCartPill(); } }, 4000);
