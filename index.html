@@ -564,6 +564,30 @@ div.toast{border-radius:0;background:#2E2118;color:#EFE6D6;border:1px solid rgba
 .mfine{padding-top:18px;margin-top:4px;font-size:13.5px}
 @media (prefers-reduced-motion:reduce){.p1{transition:none}.shade,.p1::after{display:none}}
 
+
+/* ===== MENU, READ ONLY AND CONDENSED ===== */
+.mi,.mid .inset .mi{grid-template-columns:1fr auto;margin:0;padding:3px 0}
+.mi:hover{background:none}
+.mi .add,.mi .vars,.mi .offtag{display:none}
+.pg{padding:clamp(26px,2.4vw,36px) clamp(28px,3vw,48px) clamp(20px,2vw,28px)}
+.crest{width:30px;margin:0 auto 6px}
+.crest.gap{height:36px}
+.phead{padding:7px 0 9px;margin:0 0 14px}
+.phead h2{font-size:clamp(16px,1.35vw,20px)}
+.pcols{gap:clamp(22px,2.6vw,40px)}
+.mg{margin-bottom:16px}
+.mg.subg{margin-bottom:8px}
+.pcols .mg h3{font-size:clamp(15px,1.2vw,18px);margin-bottom:6px}
+.mg h4{font-size:11.5px;margin:2px 0 2px}
+.mnote{margin:-2px 0 4px;font-size:12px}
+.mi b{font-size:11px;letter-spacing:.1em;line-height:1.35}
+.mi .p{font-size:13px}
+.mi small{font-size:11.5px;line-height:1.35;margin-top:0}
+.casenote{margin:0 0 6px;padding:6px 0;font-size:13px}
+.house{margin-bottom:0}
+.pfoot{margin-top:10px;padding-top:8px}
+.pfoot .mfine{font-size:12px}
+button.cartpill{display:none!important}
 /* LEGAL */
 .legal{display:none;position:fixed;inset:0;background:var(--bg);z-index:20;overflow-y:auto;padding:100px var(--pad) 120px}
 .legal:target{display:block}
@@ -679,7 +703,7 @@ div.toast{border-radius:0;background:#2E2118;color:#EFE6D6;border:1px solid rgba
       <button type="button" id="bDay" aria-pressed="true">Day</button>
       <button type="button" id="bNight" aria-pressed="false">Night</button>
     </div>
-    <a class="pill order-btn" href="#menu" data-open-order>Order ahead</a>
+    <a class="pill order-btn" href="#cakes">Order a cake</a>
   </div>
 </header>
 
@@ -726,8 +750,8 @@ div.toast{border-radius:0;background:#2E2118;color:#EFE6D6;border:1px solid rgba
 <section class="menu" id="menu">
   <div class="wrap">
     <div class="mtop">
-      <div><span class="micro">Order ahead, pick up at the counter</span><h2 class="hd">Menu</h2></div>
-      <p class="side">Tap + on anything you'd like, pick a time and pay when you collect. We text you when it's ready.<br><a class="pill" href="#menu" data-open-order>View your order</a></p>
+      <div><span class="micro">Coffee house, gelateria &amp; wine bar</span><h2 class="hd">Menu</h2></div>
+      <p class="side">Everything is made at the counter on Jefferson Street. Gelato and sorbetto change daily; ask what's in the case.</p>
     </div>
     <div class="mtabs" role="tablist" id="tabs" aria-label="Menu pages"></div>
     <div class="book" id="book" tabindex="0" aria-label="Menu in four pages. Use the arrows or the arrow keys to turn.">
@@ -804,7 +828,7 @@ div.toast{border-radius:0;background:#2E2118;color:#EFE6D6;border:1px solid rgba
   <div class="wrap"><div class="base"><span>&copy; 2026 Carpe Diem Cafe &amp; Wine Bar, Lafayette</span><span style="display:flex;gap:20px"><a href="#owner">Owner dashboard</a><a href="#terms">Terms</a><a href="#privacy">Privacy</a></span></div></div>
 </footer>
 
-<button class="cartpill" id="cartpill" type="button" data-open-order></button>
+<button class="cartpill" id="cartpill" type="button" hidden></button>
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Your order"><button class="pill x" type="button" id="drawerClose">Close</button><div id="drawerBody"></div></aside>
 <div class="owner" id="owner" aria-label="Owner dashboard"></div>
@@ -906,7 +930,7 @@ PAGES.forEach(function(pg){ pg.cols.forEach(function(col){ var sec = ''; col.for
   gr.items.forEach(function(it){
     it.id = slug(it.n); if (ITEMS[it.id]) it.id += '-' + slug(sec);
     it.tab = sec;
-    it.can = !gr.bar && !it.bar && ((typeof it.p === 'number' && it.p > 0) || !!it.v);
+    it.can = false; /* the menu is for reading; ordering lives in the cake and catering form */
     ITEMS[it.id] = it;
   });
 }); }); });
@@ -1023,7 +1047,7 @@ function groupHTML(gr){
 var D = PAGES[0].cols, F = PAGES[1].cols;
 var SHEETS = [
   {n:1, head:'Coffee &amp; tea', crest:1, cols:[[D[0][0], D[2][5]], [D[0][1], D[0][2], D[1][0]]]},
-  {n:2, head:'Onyx tea &amp; add-ins', cols:[[D[2][0], D[2][1], D[2][2], D[2][3], D[2][4]], [D[1][1]]], fine:'Add milks and syrups here, then say which drink they go with in the notes.', curl:'next'},
+  {n:2, head:'Onyx tea &amp; add-ins', cols:[[D[2][0], D[2][1], D[2][2], D[2][4]], [D[1][1], D[2][3]]], fine:'Non dairy milks, cold foam and syrups can be added to any drink.', curl:'next'},
   {n:3, head:'Kitchen &amp; gelato', crest:1, cols:[[F[1][0], F[1][1], F[1][2]], [F[1][3], F[0][1]]], curl:'back'},
   {n:4, head:'The bar', cols:[[F[0][0]], [F[2][0], F[2][1], F[2][2]]], fine:'Served in house only, 21 and over with ID. Not sold online.'}
 ];
