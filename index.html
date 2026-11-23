@@ -588,6 +588,58 @@ div.toast{border-radius:0;background:#2E2118;color:#EFE6D6;border:1px solid rgba
 .pfoot{margin-top:10px;padding-top:8px}
 .pfoot .mfine{font-size:12px}
 button.cartpill{display:none!important}
+
+/* ===== REQUEST FORM: one paper card ===== */
+.cakes{background:var(--cream);color:#2E2118;padding:clamp(80px,8.5vw,120px) 0}
+.chead{text-align:center;max-width:620px;margin:0 auto}
+.chead .hd{font-size:clamp(28px,2.7vw,40px)}
+.chead .hd::after{margin:20px auto 0}
+.chead .lede{margin:18px auto 0;max-width:46ch;font-size:16px}
+.ocard{position:relative;isolation:isolate;max-width:700px;margin:44px auto 0;background:#F8F5EF;padding:clamp(34px,4vw,54px) clamp(26px,4.4vw,60px) clamp(30px,3.4vw,44px);box-shadow:0 30px 60px -40px rgba(46,33,24,.45)}
+.ocard::before{content:"";position:absolute;inset:12px;border:1px solid rgba(46,33,24,.16);pointer-events:none;z-index:-1}
+.otog{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(46,33,24,.22);margin-bottom:30px}
+.otog label{position:relative;cursor:pointer;text-align:center;padding:14px 10px;font-family:var(--label);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(46,33,24,.55);transition:background-color .35s var(--ease),color .35s var(--ease)}
+.otog label + label{border-left:1px solid rgba(46,33,24,.22)}
+.otog input{position:absolute;opacity:0;pointer-events:none}
+.otog label:hover{color:#2E2118}
+.otog label:has(input:checked){background:#2E2118;color:#F4F1EB}
+.otog label:has(input:focus-visible){outline:1px solid var(--brass2);outline-offset:3px}
+.ogrid{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px}
+.of{display:flex;flex-direction:column;gap:8px;min-width:0}
+.of.full{grid-column:1/-1}
+.of label{font-family:var(--label);font-weight:500;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#6B5A47}
+.of label i{font-family:var(--display);font-style:italic;font-size:12px;letter-spacing:0;text-transform:none;opacity:.7;margin-left:4px}
+.of input,.of select,.of textarea{font-family:var(--body);font-size:16px;color:#2E2118;background:transparent;border:none;border-bottom:1px solid rgba(46,33,24,.25);border-radius:0;padding:8px 0 9px;outline:none;width:100%;transition:border-color .3s var(--ease);-webkit-appearance:none;appearance:none;color-scheme:light}
+.of input::placeholder,.of textarea::placeholder{color:rgba(46,33,24,.32)}
+.of input:focus,.of select:focus,.of textarea:focus{border-bottom-color:var(--brass2)}
+.of select{cursor:pointer;padding-right:22px;background-image:linear-gradient(45deg,transparent 50%,#8E6239 50%),linear-gradient(135deg,#8E6239 50%,transparent 50%);background-position:calc(100% - 10px) 55%,calc(100% - 5px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.of textarea{resize:vertical;min-height:76px;line-height:1.55}
+.osend{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:32px}
+.osend .btn{min-width:220px;justify-content:center}
+.osend .err{min-height:18px;text-align:center;font-size:13.5px}
+.ofine{text-align:center;font-size:13px;color:rgba(46,33,24,.6);margin-top:4px;line-height:1.6}
+.ofine a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.ocard .confirm{text-align:center;margin:0;background:transparent;border:0;padding:20px 0}
+.ocard .confirm p{margin:14px auto 0}
+@media (max-width:640px){.ogrid{grid-template-columns:1fr}.otog label{letter-spacing:.1em;font-size:10.5px}}
+
+.cakes .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,100px);align-items:center;max-width:var(--measure)}
+.cakes .chead{text-align:left;margin:0;max-width:440px}
+.cakes .chead .hd::after{margin:20px 0 0}
+.cakes .chead .lede{margin:18px 0 0}
+.cakes .ocard{margin:0;max-width:none}
+@media (max-width:900px){.cakes .wrap{grid-template-columns:1fr}.cakes .chead{text-align:center;margin:0 auto}.cakes .chead .hd::after{margin:20px auto 0}.cakes .chead .lede{margin:18px auto 0}}
+
+/* ===== LESS EMPTY SPACE BETWEEN SECTIONS ===== */
+.reel{padding:clamp(80px,8.5vw,120px) 0 clamp(76px,8vw,110px)}
+.menu{padding:clamp(76px,8vw,110px) 0 clamp(80px,8.5vw,116px)}
+.mtop{margin-bottom:30px}
+.bnav{margin-top:20px}
+.quote{min-height:min(78vh,720px)}
+.quote .txt{padding:clamp(70px,7.5vw,110px) clamp(28px,6vw,100px)}
+.vinfo{padding:clamp(70px,7.5vw,110px) clamp(28px,6vw,100px)}
+.visit{min-height:min(84vh,780px)}
+.foot{padding-top:clamp(70px,7.5vw,100px)}
 /* LEGAL */
 .legal{display:none;position:fixed;inset:0;background:var(--bg);z-index:20;overflow-y:auto;padding:100px var(--pad) 120px}
 .legal:target{display:block}
@@ -791,25 +843,33 @@ button.cartpill{display:none!important}
   </div>
 </section>
 
-<section class="cakes grain" id="cakes" aria-label="Specialty cakes and catering">
-  <div class="wrap letterwrap">
+<section class="cakes" id="cakes" aria-label="Specialty cakes and catering">
+  <div class="wrap">
     <div class="chead">
       <span class="micro">Specialty cakes &amp; catering</span>
       <h2 class="hd">Tell us about your occasion</h2>
-      <p class="lede">Fill in the blanks and it goes straight to our team by email. We reply with a price and a deposit.</p>
+      <p class="lede">Send the details and we'll reply by email with a price and deposit.</p>
     </div>
-    <form id="req" class="req letter" novalidate>
-      <div class="seg" role="radiogroup" aria-label="What you'd like">
-        <label><input type="radio" name="rType" value="Specialty cake" checked><b>A specialty cake</b><small>Birthdays, weddings, just because</small></label>
-        <label><input type="radio" name="rType" value="Catering"><b>Catering an event</b><small>Espresso, gelato and wine for your guests</small></label>
-      </div>
-      <p class="lline"><span id="rDateLbl">I need it on</span> <input id="rDate" type="date" aria-label="Date" required><span id="rSizeWrap">, a cake that <select id="rSize" aria-label="Cake size"><option value="6 inch, serves 8 to 10">serves 8 to 10</option><option value="8 inch, serves 12 to 16" selected>serves 12 to 16</option><option value="10 inch, serves 20 to 30">serves 20 to 30</option><option value="Tiered, details below">needs tiers</option></select></span><span id="rGuestsWrap">, for about <input id="rGuests" type="number" min="1" inputmode="numeric" placeholder="40" aria-label="Number of guests" class="w-num"> guests</span>.</p>
-      <p class="lline">My name is <input id="rName" autocomplete="name" placeholder="your name" aria-label="Your name" class="w-name" required>, and you can reach me at <input id="rEmail" type="email" autocomplete="email" placeholder="email address" aria-label="Email" class="w-email" required> or <input id="rPhone" type="tel" autocomplete="tel" placeholder="phone, optional" aria-label="Phone" class="w-phone">.</p>
-      <p class="lline notes"><textarea id="rNotes" rows="2" aria-label="Details" placeholder="Flavour, what to write on top, any allergies"></textarea></p>
-      <div class="actions"><button class="btn" type="submit" id="rSend">Send request</button><span class="err" id="rErr" role="alert"></span></div>
-      <p class="fine">Cakes need three days' notice. Nothing is charged until you confirm. Or call us at <a href="tel:+13372814453">(337) 281-4453</a>.</p>
-    </form>
-    <div class="confirm" id="reqOk" aria-live="polite" tabindex="-1"></div>
+    <div class="ocard">
+      <form id="req" class="oform2" novalidate>
+        <div class="otog" role="radiogroup" aria-label="What you'd like">
+          <label><input type="radio" name="rType" value="Specialty cake" checked><span>Specialty cake</span></label>
+          <label><input type="radio" name="rType" value="Catering"><span>Catering an event</span></label>
+        </div>
+        <div class="ogrid">
+          <div class="of"><label for="rName">Name</label><input id="rName" autocomplete="name" placeholder="Jane Doe" required></div>
+          <div class="of"><label for="rEmail">Email</label><input id="rEmail" type="email" autocomplete="email" placeholder="you@email.com" required></div>
+          <div class="of"><label for="rPhone">Phone <i>optional</i></label><input id="rPhone" type="tel" autocomplete="tel" placeholder="(337) 000-0000"></div>
+          <div class="of"><label for="rDate" id="rDateLbl">Date needed</label><input id="rDate" type="date" required></div>
+          <div class="of full" id="rSizeWrap"><label for="rSize">Size</label><select id="rSize"><option value="6 inch, serves 8 to 10">6 inch, serves 8 to 10</option><option value="8 inch, serves 12 to 16" selected>8 inch, serves 12 to 16</option><option value="10 inch, serves 20 to 30">10 inch, serves 20 to 30</option><option value="Tiered, details below">Tiered, tell us below</option></select></div>
+          <div class="of full" id="rGuestsWrap"><label for="rGuests">Number of guests</label><input id="rGuests" type="number" min="1" inputmode="numeric" placeholder="40"></div>
+          <div class="of full"><label for="rNotes">Details</label><textarea id="rNotes" rows="3" placeholder="Flavour, what to write on top, any allergies"></textarea></div>
+        </div>
+        <div class="osend"><button class="btn" type="submit" id="rSend">Send request</button><span class="err" id="rErr" role="alert"></span></div>
+        <p class="ofine">Cakes need three days' notice. Nothing is charged until you confirm. Prefer to talk? Call <a href="tel:+13372814453">(337) 281-4453</a>.</p>
+      </form>
+      <div class="confirm" id="reqOk" aria-live="polite" tabindex="-1"></div>
+    </div>
   </div>
 </section>
 
@@ -1290,8 +1350,8 @@ var SHOP_EMAIL = 'carpediemwinebarmgmt@gmail.com';
   function sync(){
     var cat = type() === 'Catering';
     $('#rSizeWrap').style.display = cat ? 'none' : ''; $('#rGuestsWrap').style.display = cat ? '' : 'none';
-    $('#rDateLbl').textContent = cat ? 'The event is on' : 'I need it on';
-    $('#rNotes').placeholder = cat ? 'The occasion, the time, and what you have in mind: espresso bar, gelato, wine' : 'Flavour, what to write on top, any allergies';
+    $('#rDateLbl').textContent = cat ? 'Event date' : 'Date needed';
+    $('#rNotes').placeholder = cat ? 'The occasion, the time, and what you have in mind' : 'Flavour, what to write on top, any allergies';
   }
   $$('input[name=rType]', req).forEach(function(r){ r.onchange = sync; }); sync();
   req.onsubmit = function(e){
