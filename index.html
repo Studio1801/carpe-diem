@@ -387,6 +387,55 @@ main .btn:disabled{opacity:.6;cursor:default}
 @media (max-width:900px){.visit{grid-template-columns:1fr}.visit .vphoto{min-height:60vh}.vinfo{max-width:none}}
 @media (prefers-reduced-motion:reduce){.vnow.open::before{animation:none}}
 
+
+/* ===== GOOGLE CARD ===== */
+.reel .rhead{align-items:center}
+.gcard{display:flex;align-items:stretch;gap:0;text-decoration:none;color:var(--cream);background:rgba(239,230,214,.06);border:1px solid rgba(176,141,87,.45);min-width:0;transition:border-color .4s var(--ease),background-color .4s var(--ease)}
+.gcard:hover{border-color:#D9B48A;background:rgba(239,230,214,.1)}
+.gmap{position:relative;width:180px;flex:none;overflow:hidden;background:#24322a}
+.gmap iframe{position:absolute;inset:-40px -60px;width:calc(100% + 120px);height:calc(100% + 80px);border:0;pointer-events:none;filter:grayscale(.55) sepia(.35) contrast(.92) brightness(.92)}
+.gtxt{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:16px 22px}
+.glab{font-family:var(--label);font-weight:500;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+.grow{display:flex;align-items:baseline;gap:12px}
+.grow b{font-family:var(--display);font-weight:400;font-size:34px;line-height:1}
+.stars{font-size:15px;letter-spacing:3px;background:linear-gradient(90deg,#D9B48A calc(var(--r)/5*100%),rgba(239,230,214,.25) 0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gsub{font-size:13px;opacity:.75}
+.rfoot{display:flex;justify-content:flex-end;margin-top:30px}
+@media (max-width:860px){.reel .rhead{flex-direction:column;align-items:flex-start}.gcard{width:100%}}
+
+/* ===== THE LETTER FORM ===== */
+.cakes{padding:clamp(120px,13vw,190px) 0}
+.cakes .letterwrap{display:block;max-width:880px;text-align:center}
+.chead .hd::after{margin-left:auto;margin-right:auto}
+.chead .lede{margin:24px auto 0;max-width:44ch}
+.letter{display:block;margin-top:64px;text-align:left}
+.letter .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:0 0 56px;border-top:1px solid rgba(46,33,24,.14);border-bottom:1px solid rgba(46,33,24,.14)}
+.letter .seg label{display:flex;flex-direction:column;align-items:center;gap:6px;padding:28px 18px;background:transparent;border-radius:0;text-transform:none;letter-spacing:0;font-family:var(--display);color:rgba(46,33,24,.45);position:relative;transition:color .4s var(--ease)}
+.letter .seg label + label{border-left:1px solid rgba(46,33,24,.14)}
+.letter .seg label b{font-weight:400;font-style:italic;font-size:clamp(22px,2.1vw,28px)}
+.letter .seg label small{font-family:var(--body);font-size:13.5px;letter-spacing:.01em}
+.letter .seg label::after{content:"";position:absolute;left:50%;bottom:-1px;width:0;height:1px;background:var(--brass2);transition:width .5s var(--ease),left .5s var(--ease)}
+.letter .seg label:hover{color:rgba(46,33,24,.75)}
+.letter .seg label:has(input:checked){background:transparent;color:#2E2118}
+.letter .seg label:has(input:checked)::after{left:20%;width:60%}
+.letter .seg label:has(input:focus-visible){outline:1px solid var(--brass2);outline-offset:-6px}
+.lline{font-family:var(--display);font-size:clamp(21px,2.1vw,28px);line-height:2.15;color:#2E2118;margin:0 0 6px}
+.lline input,.lline select,.lline textarea{font-family:var(--display);font-style:italic;font-size:inherit;color:#8E6239;background:transparent;border:none;border-bottom:1px solid rgba(46,33,24,.3);border-radius:0;padding:0 4px 2px;margin:0 2px;outline:none;line-height:1.3;transition:border-color .3s var(--ease);-webkit-appearance:none;appearance:none}
+.lline input::placeholder,.lline textarea::placeholder{color:rgba(46,33,24,.32);font-style:italic}
+.lline input:focus,.lline select:focus,.lline textarea:focus{border-bottom-color:var(--brass2)}
+.lline select{padding-right:22px;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,#8E6239 50%),linear-gradient(135deg,#8E6239 50%,transparent 50%);background-position:calc(100% - 10px) 55%,calc(100% - 5px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.lline input[type=date]{width:7.6em;color-scheme:light}
+.w-num{width:3.2em;text-align:center}
+.w-name{width:7.5em}.w-email{width:10em}.w-phone{width:7.5em}
+.lline.notes{margin-top:22px}
+.lline textarea{display:block;width:100%;font-size:clamp(18px,1.6vw,21px);line-height:1.6;resize:vertical;min-height:2.4em;padding:6px 4px}
+.letter .actions{margin-top:44px;justify-content:center;flex-direction:column;gap:14px}
+.letter .fine{text-align:center;margin-top:18px}
+.letter .err{min-height:20px;text-align:center}
+.letterwrap .confirm{text-align:center;margin:64px auto 0;max-width:640px;background:transparent;border-top:1px solid var(--brass2);border-bottom:1px solid var(--brass2);padding:46px 20px}
+.letterwrap .confirm p{margin:16px auto 0}
+@media (max-width:640px){.letter .seg{grid-template-columns:1fr}.letter .seg label + label{border-left:none;border-top:1px solid rgba(46,33,24,.14)}.lline{line-height:2}.w-email{width:100%}.lline input[type=date]{width:8.2em}}
+
 /* LEGAL */
 .legal{display:none;position:fixed;inset:0;background:var(--bg);z-index:20;overflow-y:auto;padding:100px var(--pad) 120px}
 .legal:target{display:block}
@@ -531,7 +580,10 @@ main .btn:disabled{opacity:.6;cursor:default}
 <section class="reel" aria-label="Short clips from the cafe">
   <div class="wrap rhead">
     <div><span class="micro">From our Instagram</span><h2 class="hd">A day on Jefferson Street</h2></div>
-    <div class="rnav"><button type="button" id="rPrev" aria-label="Previous clips">&larr;</button><button type="button" id="rNext" aria-label="Next clips">&rarr;</button></div>
+    <a class="gcard" href="https://www.google.com/maps/search/?api=1&amp;query=Carpe+Diem+Cafe+%26+Wine+Bar+812+Jefferson+St+Lafayette+LA" aria-label="Rated 4.5 out of 5 from 484 Google reviews. Open in Google Maps">
+      <span class="gmap" aria-hidden="true"><iframe title="Map of Carpe Diem, 812 Jefferson Street" src="https://maps.google.com/maps?q=Carpe%20Diem%20Cafe%20%26%20Wine%20Bar%2C%20812%20Jefferson%20St%2C%20Lafayette%2C%20LA&amp;z=16&amp;output=embed" loading="lazy" tabindex="-1"></iframe></span>
+      <span class="gtxt"><span class="glab">Google reviews</span><span class="grow"><b>4.5</b><span class="stars" style="--r:4.5" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></span><span class="gsub">484 reviews &middot; 812 Jefferson St</span></span>
+    </a>
   </div>
   <div class="strip" id="strip">
     <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip2.jpg" src="video/clip2.mp4"></video></div><figcaption>Matcha, cinnamon on top</figcaption></figure>
@@ -540,6 +592,7 @@ main .btn:disabled{opacity:.6;cursor:default}
     <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip4.jpg" src="video/clip4.mp4"></video></div><figcaption>Cold foam, poured slow</figcaption></figure>
     <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip1.jpg" src="video/clip1.mp4"></video></div><figcaption>A slow coffee and a slice of cake</figcaption></figure>
   </div>
+  <div class="wrap rfoot"><div class="rnav"><button type="button" id="rPrev" aria-label="Previous clips">&larr;</button><button type="button" id="rNext" aria-label="Next clips">&rarr;</button></div></div>
 </section>
 
 <section class="menu" id="menu">
@@ -580,32 +633,24 @@ main .btn:disabled{opacity:.6;cursor:default}
 </section>
 
 <section class="cakes grain" id="cakes" aria-label="Specialty cakes and catering">
-  <div class="wrap">
-    <div class="collage">
-      <div class="frame a"><img src="img/cupcakes.jpg" alt="Vanilla cupcakes with sugared cranberries and rosemary" loading="lazy"></div>
-      <div class="frame b"><img src="img/burnt-honey-cake.jpg" alt="The burnt honey cake, cut to show its layers" loading="lazy"></div>
-    </div>
-    <div>
+  <div class="wrap letterwrap">
+    <div class="chead">
       <span class="micro">Specialty cakes &amp; catering</span>
       <h2 class="hd">Tell us about your occasion</h2>
-      <p class="lede">Order a specialty cake, or have us cater your event with espresso, gelato and wine. Send the details here and it goes straight to the Carpe Diem team by email. We reply with a price and deposit.</p>
-      <form id="req" class="req" novalidate>
-        <div class="field full"><span class="lbl">I'd like</span><div class="seg" role="radiogroup">
-          <label><input type="radio" name="rType" value="Specialty cake" checked><span>A specialty cake</span></label>
-          <label><input type="radio" name="rType" value="Catering"><span>Catering for an event</span></label>
-        </div></div>
-        <div class="field"><label for="rName">Name</label><input id="rName" autocomplete="name" required></div>
-        <div class="field"><label for="rEmail">Email</label><input id="rEmail" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="rPhone">Phone</label><input id="rPhone" type="tel" autocomplete="tel"></div>
-        <div class="field"><label for="rDate" id="rDateLbl">Needed on</label><input id="rDate" type="date" required></div>
-        <div class="field full" id="rSizeWrap"><label for="rSize">Size</label><select id="rSize"><option>6 inch, serves 8 to 10</option><option selected>8 inch, serves 12 to 16</option><option>10 inch, serves 20 to 30</option><option>Tiered, tell us below</option></select></div>
-        <div class="field full" id="rGuestsWrap"><label for="rGuests">Number of guests</label><input id="rGuests" type="number" min="1" inputmode="numeric"></div>
-        <div class="field full"><label for="rNotes">Details</label><textarea id="rNotes" rows="3" placeholder="Flavour, what to write on top, any allergies"></textarea></div>
-        <div class="actions"><button class="btn" type="submit" id="rSend">Send request</button><span class="err" id="rErr" role="alert"></span></div>
-        <p class="fine">Cakes need at least three days' notice. Nothing is charged until you confirm. You can also call <a href="tel:+13372814453">(337) 281-4453</a>.</p>
-      </form>
-      <div class="confirm" id="reqOk" aria-live="polite" tabindex="-1"></div>
+      <p class="lede">Fill in the blanks and it goes straight to our team by email. We reply with a price and a deposit.</p>
     </div>
+    <form id="req" class="req letter" novalidate>
+      <div class="seg" role="radiogroup" aria-label="What you'd like">
+        <label><input type="radio" name="rType" value="Specialty cake" checked><b>A specialty cake</b><small>Birthdays, weddings, just because</small></label>
+        <label><input type="radio" name="rType" value="Catering"><b>Catering an event</b><small>Espresso, gelato and wine for your guests</small></label>
+      </div>
+      <p class="lline"><span id="rDateLbl">I need it on</span> <input id="rDate" type="date" aria-label="Date" required><span id="rSizeWrap">, a cake that <select id="rSize" aria-label="Cake size"><option value="6 inch, serves 8 to 10">serves 8 to 10</option><option value="8 inch, serves 12 to 16" selected>serves 12 to 16</option><option value="10 inch, serves 20 to 30">serves 20 to 30</option><option value="Tiered, details below">needs tiers</option></select></span><span id="rGuestsWrap">, for about <input id="rGuests" type="number" min="1" inputmode="numeric" placeholder="40" aria-label="Number of guests" class="w-num"> guests</span>.</p>
+      <p class="lline">My name is <input id="rName" autocomplete="name" placeholder="your name" aria-label="Your name" class="w-name" required>, and you can reach me at <input id="rEmail" type="email" autocomplete="email" placeholder="email address" aria-label="Email" class="w-email" required> or <input id="rPhone" type="tel" autocomplete="tel" placeholder="phone, optional" aria-label="Phone" class="w-phone">.</p>
+      <p class="lline notes"><textarea id="rNotes" rows="2" aria-label="Details" placeholder="Flavour, what to write on top, any allergies"></textarea></p>
+      <div class="actions"><button class="btn" type="submit" id="rSend">Send request</button><span class="err" id="rErr" role="alert"></span></div>
+      <p class="fine">Cakes need three days' notice. Nothing is charged until you confirm. Or call us at <a href="tel:+13372814453">(337) 281-4453</a>.</p>
+    </form>
+    <div class="confirm" id="reqOk" aria-live="polite" tabindex="-1"></div>
   </div>
 </section>
 
@@ -987,7 +1032,7 @@ var SHOP_EMAIL = 'carpediemwinebarmgmt@gmail.com';
   function sync(){
     var cat = type() === 'Catering';
     $('#rSizeWrap').style.display = cat ? 'none' : ''; $('#rGuestsWrap').style.display = cat ? '' : 'none';
-    $('#rDateLbl').textContent = cat ? 'Event date' : 'Needed on';
+    $('#rDateLbl').textContent = cat ? 'The event is on' : 'I need it on';
     $('#rNotes').placeholder = cat ? 'The occasion, the time, and what you have in mind: espresso bar, gelato, wine' : 'Flavour, what to write on top, any allergies';
   }
   $$('input[name=rType]', req).forEach(function(r){ r.onchange = sync; }); sync();
@@ -1274,7 +1319,7 @@ document.addEventListener('click', function(e){
 (function(){
   if (!('IntersectionObserver' in window) || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
   document.documentElement.classList.add('js-r');
-  var els = $$('main .micro, main .hd, main .lede, main .frame, .mtop .side, .card, .clip figcaption, .vnow, #hours, .vact, .req');
+  var els = $$('main .micro, main .hd, main .lede, main .frame, .mtop .side, .card, .clip figcaption, .vnow, #hours, .vact, .letter .seg, .letter .lline, .letter .actions, .gcard');
   var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
   els.forEach(function(el){
     el.setAttribute('data-r','');
