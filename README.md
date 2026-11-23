@@ -42,7 +42,8 @@ To preview it, open `index.html` in a browser.
 1. Replace the browser storage with a real database. The `load()`, `save()` and `commit()` functions in the script are the only places that read and write data. You could use a Google Sheet with Apps Script, as on the Miss Oz site.
 2. Add a real owner login in front of `#owner`. It's open in the demo on purpose.
 3. Send a text when an order is marked Ready, for example with Twilio.
-4. Email the shop when a new order, request or RSVP comes in, for example with Resend.
+4. Email the shop when a new order or RSVP comes in, for example with Resend.
+4b. Cake and catering requests: set `REQUEST_ENDPOINT` in the script to a form-to-email address, for example `https://formsubmit.co/ajax/carpediemwinebarmgmt@gmail.com`. Every request then lands in that inbox as a tidy table, with reply-to set to the customer. FormSubmit sends one activation email to the shop the first time; click it once. While it's empty, requests only go to the owner dashboard.
 5. Optional: online payment through Square or Stripe.
 6. Restore the real phone, email, Instagram and Maps links by removing the demo click handler.
 

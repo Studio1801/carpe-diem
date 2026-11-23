@@ -321,6 +321,13 @@ main .frame:hover img,.clip:hover video{transform:scale(1.03)}
 .foot .base{border-top-color:rgba(176,141,87,.35)}
 @media (max-width:680px){.card{padding:56px 26px 50px}.card::before{inset:10px}.mtabs button{padding:16px 10px;letter-spacing:.1em}}
 
+.confirm{padding:clamp(30px,3.5vw,46px);margin-top:44px;border-top:1px solid var(--brass2)}
+.confirm p{margin-top:14px;line-height:1.75;max-width:46ch}
+.confirm b{font-size:clamp(30px,3vw,40px);letter-spacing:.02em;text-transform:uppercase}
+.req .fine a{text-decoration:underline;text-underline-offset:3px}
+main .btn:disabled{opacity:.6;cursor:default}
+.req .seg label{padding:12px 18px}
+
 /* LEGAL */
 .legal{display:none;position:fixed;inset:0;background:var(--bg);z-index:20;overflow-y:auto;padding:100px var(--pad) 120px}
 .legal:target{display:block}
@@ -496,39 +503,6 @@ main .frame:hover img,.clip:hover video{transform:scale(1.03)}
   <div class="frame"><img src="img/green-wall.jpg" alt="Afternoon light across the green brick wall and a potted snake plant" loading="lazy"></div>
 </section>
 
-<section class="cakes grain" id="cakes" aria-label="Cakes and catering">
-  <div class="wrap">
-    <div class="collage">
-      <div class="frame a"><img src="img/cupcakes.jpg" alt="Vanilla cupcakes with sugared cranberries and rosemary" loading="lazy"></div>
-      <div class="frame b"><img src="img/burnt-honey-cake.jpg" alt="The burnt honey cake, cut to show its layers" loading="lazy"></div>
-    </div>
-    <div>
-      <span class="micro">Cakes &amp; catering</span>
-      <h2 class="hd">Made for the occasion</h2>
-      <p class="lede">The burnt honey cake is our signature: thin honey layers, cream between every one. We also bake custom cakes and cater, from office mornings with an espresso bar to evenings with gelato and wine.</p>
-      <div class="contact"><a href="tel:+13372814453">(337) 281-4453</a><a href="mailto:carpediemwinebarmgmt@gmail.com">carpediemwinebarmgmt@gmail.com</a></div>
-      <form id="req" class="req" novalidate>
-        <div class="field full"><span class="lbl">What for</span><div class="seg">
-          <label><input type="radio" name="rType" value="Burnt honey cake" checked><span>Burnt honey cake</span></label>
-          <label><input type="radio" name="rType" value="Custom specialty cake"><span>Custom cake</span></label>
-          <label><input type="radio" name="rType" value="Catering"><span>Catering</span></label>
-        </div></div>
-        <div class="field" id="rSizeWrap"><label for="rSize">Size</label><select id="rSize"><option>6 inch, serves 8 to 10</option><option selected>8 inch, serves 12 to 16</option><option>10 inch, serves 20 to 30</option><option>Tiered, tell us below</option></select></div>
-        <div class="field" id="rGuestsWrap"><label for="rGuests">Guests</label><input id="rGuests" type="number" min="1" placeholder="How many"></div>
-        <div class="field"><label for="rDate">Needed on</label><input id="rDate" type="date"></div>
-        <div class="field full" id="rInsWrap"><label for="rIns">Written on the cake</label><input id="rIns" maxlength="40" placeholder="Happy birthday, Nina"></div>
-        <div class="field"><label for="rName">Name</label><input id="rName" autocomplete="name"></div>
-        <div class="field"><label for="rPhone">Phone</label><input id="rPhone" type="tel" autocomplete="tel"></div>
-        <div class="field full"><label for="rEmail">Email</label><input id="rEmail" type="email" autocomplete="email"></div>
-        <div class="field full"><label for="rNotes">Anything else</label><textarea id="rNotes" placeholder="Flavours, allergies, the occasion"></textarea></div>
-        <div class="actions"><button class="btn" type="submit">Send request</button><span class="err" id="rErr"></span></div>
-        <p class="fine">Cakes need at least three days. We reply with the price and deposit; nothing is charged here.</p>
-      </form>
-      <div class="confirm" id="reqOk" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
-
 <section class="visit" id="visit">
   <div class="wrap">
     <div class="pics">
@@ -549,6 +523,36 @@ main .frame:hover img,.clip:hover video{transform:scale(1.03)}
         <tr data-d="6"><td>Saturday</td><td class="t">9 AM to 9 PM</td></tr>
         <tr data-d="0"><td>Sunday</td><td class="t">9 AM to 8 PM</td></tr>
       </table>
+    </div>
+  </div>
+</section>
+
+<section class="cakes grain" id="cakes" aria-label="Specialty cakes and catering">
+  <div class="wrap">
+    <div class="collage">
+      <div class="frame a"><img src="img/cupcakes.jpg" alt="Vanilla cupcakes with sugared cranberries and rosemary" loading="lazy"></div>
+      <div class="frame b"><img src="img/burnt-honey-cake.jpg" alt="The burnt honey cake, cut to show its layers" loading="lazy"></div>
+    </div>
+    <div>
+      <span class="micro">Specialty cakes &amp; catering</span>
+      <h2 class="hd">Tell us about your occasion</h2>
+      <p class="lede">Order a specialty cake, or have us cater your event with espresso, gelato and wine. Send the details here and it goes straight to the Carpe Diem team by email. We reply with a price and deposit.</p>
+      <form id="req" class="req" novalidate>
+        <div class="field full"><span class="lbl">I'd like</span><div class="seg" role="radiogroup">
+          <label><input type="radio" name="rType" value="Specialty cake" checked><span>A specialty cake</span></label>
+          <label><input type="radio" name="rType" value="Catering"><span>Catering for an event</span></label>
+        </div></div>
+        <div class="field"><label for="rName">Name</label><input id="rName" autocomplete="name" required></div>
+        <div class="field"><label for="rEmail">Email</label><input id="rEmail" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="rPhone">Phone</label><input id="rPhone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="rDate" id="rDateLbl">Needed on</label><input id="rDate" type="date" required></div>
+        <div class="field full" id="rSizeWrap"><label for="rSize">Size</label><select id="rSize"><option>6 inch, serves 8 to 10</option><option selected>8 inch, serves 12 to 16</option><option>10 inch, serves 20 to 30</option><option>Tiered, tell us below</option></select></div>
+        <div class="field full" id="rGuestsWrap"><label for="rGuests">Number of guests</label><input id="rGuests" type="number" min="1" inputmode="numeric"></div>
+        <div class="field full"><label for="rNotes">Details</label><textarea id="rNotes" rows="3" placeholder="Flavour, what to write on top, any allergies"></textarea></div>
+        <div class="actions"><button class="btn" type="submit" id="rSend">Send request</button><span class="err" id="rErr" role="alert"></span></div>
+        <p class="fine">Cakes need at least three days' notice. Nothing is charged until you confirm. You can also call <a href="tel:+13372814453">(337) 281-4453</a>.</p>
+      </form>
+      <div class="confirm" id="reqOk" aria-live="polite" tabindex="-1"></div>
     </div>
   </div>
 </section>
@@ -920,29 +924,48 @@ document.addEventListener('click', function(e){
    CAKE AND CATERING REQUESTS
    ============================================================ */
 var req = $('#req');
+/* Where requests are emailed. Demo: left empty, so requests only go to the
+   owner dashboard. To go live, paste a form-to-email endpoint here, for example
+   'https://formsubmit.co/ajax/carpediemwinebarmgmt@gmail.com'. */
+var REQUEST_ENDPOINT = '';
+var SHOP_EMAIL = 'carpediemwinebarmgmt@gmail.com';
 (function(){
   var t = laf(); $('#rDate').min = addDays(t.date, 3); $('#rDate').value = addDays(t.date, 7);
+  function type(){ return $('input[name=rType]:checked', req).value; }
   function sync(){
-    var type = $('input[name=rType]:checked', req).value, cat = type === 'Catering';
-    $('#rSizeWrap').style.display = cat ? 'none' : ''; $('#rGuestsWrap').style.display = cat ? '' : 'none'; $('#rInsWrap').style.display = cat ? 'none' : '';
+    var cat = type() === 'Catering';
+    $('#rSizeWrap').style.display = cat ? 'none' : ''; $('#rGuestsWrap').style.display = cat ? '' : 'none';
+    $('#rDateLbl').textContent = cat ? 'Event date' : 'Needed on';
+    $('#rNotes').placeholder = cat ? 'The occasion, the time, and what you have in mind: espresso bar, gelato, wine' : 'Flavour, what to write on top, any allergies';
   }
   $$('input[name=rType]', req).forEach(function(r){ r.onchange = sync; }); sync();
   req.onsubmit = function(e){
     e.preventDefault();
-    var type = $('input[name=rType]:checked', req).value, name = $('#rName').value.trim(), email = $('#rEmail').value.trim(), date = $('#rDate').value;
-    var err = $('#rErr');
-    if (!name) { err.textContent = 'Add your name.'; return; }
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { err.textContent = 'Add an email so the shop can send the price.'; return; }
-    if (!date || date < $('#rDate').min) { err.textContent = 'Pick a date at least 3 days from today.'; return; }
+    var ty = type(), cat = ty === 'Catering', name = $('#rName').value.trim(), email = $('#rEmail').value.trim(), date = $('#rDate').value, err = $('#rErr');
+    if (!name) { err.textContent = 'Please add your name.'; $('#rName').focus(); return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { err.textContent = 'Please add an email so we can reply.'; $('#rEmail').focus(); return; }
+    if (!date || date < $('#rDate').min) { err.textContent = 'Please pick a date at least three days from today.'; $('#rDate').focus(); return; }
+    if (cat && !(+$('#rGuests').value > 0)) { err.textContent = 'Roughly how many guests?'; $('#rGuests').focus(); return; }
     err.textContent = '';
-    var ref;
+    var ref, size = cat ? $('#rGuests').value + ' guests' : $('#rSize').value, notes = $('#rNotes').value.trim(), phone = $('#rPhone').value.trim();
     commit(function(S){
       ref = 'C-' + (S.nextReq++);
-      S.requests.unshift({ref:ref,type:type,size:type==='Catering' ? ($('#rGuests').value || '?') + ' guests' : $('#rSize').value,date:date,name:name,email:email,phone:$('#rPhone').value.trim(),inscription:$('#rIns').value.trim(),notes:$('#rNotes').value.trim(),status:'New',quote:''});
+      S.requests.unshift({ref:ref,type:ty,size:size,date:date,name:name,email:email,phone:phone,inscription:'',notes:notes,status:'New',quote:''});
     });
-    var c = $('#reqOk');
-    c.innerHTML = '<span class="micro">Request received</span><b>'+ref+'</b><p style="margin-top:12px">Thank you, '+esc(name.split(' ')[0])+'. The shop will email '+esc(email)+' with the price and deposit for '+esc(type.toLowerCase())+' on '+niceDate(date)+'. Nothing is charged yet.</p>';
-    c.classList.add('show'); req.reset(); $('#rDate').value = addDays(laf().date, 7); sync();
+    function done(){
+      var c = $('#reqOk');
+      c.innerHTML = '<span class="micro">Thank you, ' + esc(name.split(' ')[0]) + '</span><b>Request ' + ref + ' sent</b><p>Your ' + (cat ? 'catering request for ' + esc(size) : esc(size) + ' cake') + ' on ' + niceDate(date) + ' went to the Carpe Diem team. We\'ll reply to ' + esc(email) + ' with a price and deposit.</p>';
+      req.style.display = 'none'; c.classList.add('show'); c.focus();
+    }
+    if (!REQUEST_ENDPOINT) { done(); return; }
+    var btn = $('#rSend'); btn.disabled = true; btn.textContent = 'Sending';
+    fetch(REQUEST_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify({
+      _subject: (cat ? 'Catering request ' : 'Cake request ') + ref + ' from ' + name, _replyto: email, _template:'table',
+      Request: ty, Reference: ref, Name: name, Email: email, Phone: phone, Date: niceDate(date), Size: size, Details: notes
+    })}).then(function(r){ if (!r.ok) throw 0; done(); }).catch(function(){
+      btn.disabled = false; btn.textContent = 'Send request';
+      err.textContent = 'That didn\'t send. Please try again, or email ' + SHOP_EMAIL + '.';
+    });
   };
 })();
 
