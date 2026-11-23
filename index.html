@@ -360,9 +360,9 @@ main .btn:disabled{opacity:.6;cursor:default}
 /* scroll reveal: photos unveil, words rise, staggered */
 @media (prefers-reduced-motion:no-preference){
   .js-r [data-r]{opacity:0;transform:translateY(16px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
-  .js-r .frame[data-r]{opacity:1;transform:none;clip-path:inset(100% 0 0 0);transition:clip-path 1.4s cubic-bezier(.77,0,.18,1)}
+  .js-r .frame[data-r]{opacity:0;transform:none;transition:opacity 1.4s var(--ease)}
   .js-r .frame[data-r] img,.js-r .frame[data-r] video{transform:scale(1.12);transition:transform 1.8s var(--ease)}
-  .js-r [data-r].in{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+  .js-r [data-r].in{opacity:1;transform:none}
   .js-r .frame[data-r].in img,.js-r .frame[data-r].in video{transform:none}
   .js-r .card[data-r]{transform:translateY(30px)}
 }
@@ -387,21 +387,6 @@ main .btn:disabled{opacity:.6;cursor:default}
 @media (max-width:900px){.visit{grid-template-columns:1fr}.visit .vphoto{min-height:60vh}.vinfo{max-width:none}}
 @media (prefers-reduced-motion:reduce){.vnow.open::before{animation:none}}
 
-
-/* ===== GOOGLE CARD ===== */
-.reel .rhead{align-items:center}
-.gcard{display:flex;align-items:stretch;gap:0;text-decoration:none;color:var(--cream);background:rgba(239,230,214,.06);border:1px solid rgba(176,141,87,.45);min-width:0;transition:border-color .4s var(--ease),background-color .4s var(--ease)}
-.gcard:hover{border-color:#D9B48A;background:rgba(239,230,214,.1)}
-.gmap{position:relative;width:180px;flex:none;overflow:hidden;background:#24322a}
-.gmap iframe{position:absolute;inset:-40px -60px;width:calc(100% + 120px);height:calc(100% + 80px);border:0;pointer-events:none;filter:grayscale(.55) sepia(.35) contrast(.92) brightness(.92)}
-.gtxt{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:16px 22px}
-.glab{font-family:var(--label);font-weight:500;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
-.grow{display:flex;align-items:baseline;gap:12px}
-.grow b{font-family:var(--display);font-weight:400;font-size:34px;line-height:1}
-.stars{font-size:15px;letter-spacing:3px;background:linear-gradient(90deg,#D9B48A calc(var(--r)/5*100%),rgba(239,230,214,.25) 0);-webkit-background-clip:text;background-clip:text;color:transparent}
-.gsub{font-size:13px;opacity:.75}
-.rfoot{display:flex;justify-content:flex-end;margin-top:30px}
-@media (max-width:860px){.reel .rhead{flex-direction:column;align-items:flex-start}.gcard{width:100%}}
 
 /* ===== THE LETTER FORM ===== */
 .cakes{padding:clamp(120px,13vw,190px) 0}
@@ -580,10 +565,7 @@ main .btn:disabled{opacity:.6;cursor:default}
 <section class="reel" aria-label="Short clips from the cafe">
   <div class="wrap rhead">
     <div><span class="micro">From our Instagram</span><h2 class="hd">A day on Jefferson Street</h2></div>
-    <a class="gcard" href="https://www.google.com/maps/search/?api=1&amp;query=Carpe+Diem+Cafe+%26+Wine+Bar+812+Jefferson+St+Lafayette+LA" aria-label="Rated 4.5 out of 5 from 484 Google reviews. Open in Google Maps">
-      <span class="gmap" aria-hidden="true"><iframe title="Map of Carpe Diem, 812 Jefferson Street" src="https://maps.google.com/maps?q=Carpe%20Diem%20Cafe%20%26%20Wine%20Bar%2C%20812%20Jefferson%20St%2C%20Lafayette%2C%20LA&amp;z=16&amp;output=embed" loading="lazy" tabindex="-1"></iframe></span>
-      <span class="gtxt"><span class="glab">Google reviews</span><span class="grow"><b>4.5</b><span class="stars" style="--r:4.5" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></span><span class="gsub">484 reviews &middot; 812 Jefferson St</span></span>
-    </a>
+    <div class="rnav"><button type="button" id="rPrev" aria-label="Previous clips">&larr;</button><button type="button" id="rNext" aria-label="Next clips">&rarr;</button></div>
   </div>
   <div class="strip" id="strip">
     <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip2.jpg" src="video/clip2.mp4"></video></div><figcaption>Matcha, cinnamon on top</figcaption></figure>
@@ -592,7 +574,6 @@ main .btn:disabled{opacity:.6;cursor:default}
     <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip4.jpg" src="video/clip4.mp4"></video></div><figcaption>Cold foam, poured slow</figcaption></figure>
     <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip1.jpg" src="video/clip1.mp4"></video></div><figcaption>A slow coffee and a slice of cake</figcaption></figure>
   </div>
-  <div class="wrap rfoot"><div class="rnav"><button type="button" id="rPrev" aria-label="Previous clips">&larr;</button><button type="button" id="rNext" aria-label="Next clips">&rarr;</button></div></div>
 </section>
 
 <section class="menu" id="menu">
@@ -1319,7 +1300,7 @@ document.addEventListener('click', function(e){
 (function(){
   if (!('IntersectionObserver' in window) || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
   document.documentElement.classList.add('js-r');
-  var els = $$('main .micro, main .hd, main .lede, main .frame, .mtop .side, .card, .clip figcaption, .vnow, #hours, .vact, .letter .seg, .letter .lline, .letter .actions, .gcard');
+  var els = $$('main .micro, main .hd, main .lede, main .frame, .mtop .side, .card, .clip figcaption, .vnow, #hours, .vact, .letter .seg, .letter .lline, .letter .actions');
   var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
   els.forEach(function(el){
     el.setAttribute('data-r','');
