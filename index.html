@@ -7,7 +7,7 @@
 <meta name="description" content="Coffee house, Italian artisan gelateria and wine bar at 812 Jefferson Street, Downtown Lafayette. House made gelato, full espresso menu, artisan teas, crepes, gluten free pastries, wine and craft cocktails.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=EB+Garamond:ital,wght@0,400..500;1,400..500&family=Pinyon+Script&family=Azeret+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..600;1,400..500&family=Montserrat:wght@500;600&family=Quicksand:wght@400..600&family=Azeret+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#EFE6D6;   /* day canvas, type on dark */
@@ -17,17 +17,18 @@
   --brass:#E0A93B;   /* the sun / moon marker, nothing else */
   --ash:#CDBB9C;     /* hairlines */
   --bg:var(--paper); --ink:var(--brick); --band:var(--linen); --rule:var(--ash);
-  --serif:"EB Garamond", "Iowan Old Style", Georgia, serif;
-  --script:"Pinyon Script", "Snell Roundhand", cursive;
+  --serif:"Playfair Display", Georgia, serif;
+  --body:"Quicksand", "Avenir Next", sans-serif;
+  --label:"Montserrat", "Avenir Next", sans-serif;
   --mono:"Azeret Mono", ui-monospace, monospace;
-  --display:"Bodoni Moda", "Didot", "Bodoni 72", serif;
+  --display:"Playfair Display", Georgia, serif;
   --ease:cubic-bezier(0.16, 1, 0.3, 1);
   --pad:clamp(20px, 4vw, 56px);
 }
 html[data-mode="night"]{ --bg:#1E261F; --ink:#EFE6D6; --band:#28322A; --rule:#3F4A3F; }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip}
-body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.45;font-variation-settings:"opsz" 14;font-variant-numeric:lining-nums tabular-nums;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .65s var(--ease),color .65s var(--ease)}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;font-variation-settings:"opsz" 14;font-variant-numeric:lining-nums tabular-nums;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .65s var(--ease),color .65s var(--ease)}
 section,footer{transition:background-color .65s var(--ease),color .65s var(--ease)}
 a{color:inherit}
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
@@ -91,11 +92,11 @@ form{border-top:1px solid var(--ink);margin-top:14px}
 /* ===== BELOW THE HERO: cream, olive, oxblood ===== */
 main,.foot{--cream:#EFE6D6;--olive:#2F4232;--wine:#4A3121;--clay:#8E6239;--measure:1280px;position:relative}
 main .wrap,.foot .wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--pad)}
-.hd{font-family:var(--display);font-weight:400;font-variation-settings:"opsz" 96;text-transform:uppercase;letter-spacing:-.005em;line-height:.98;font-size:clamp(40px,5vw,74px)}
+.hd{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:-.01em;line-height:1.02;font-size:clamp(38px,4.6vw,68px)}
 .hd.sm{font-size:clamp(34px,3.6vw,52px)}
-main .micro{display:block;margin-bottom:10px;font-family:var(--script);font-style:normal;font-size:clamp(24px,2vw,30px);line-height:1.2;letter-spacing:0;opacity:.92}
-.nav > .micro{font-family:var(--script);font-style:normal;font-size:24px}
-body{font-size:19px}
+main .micro{display:block;margin-bottom:12px;font-family:var(--display);font-style:italic;font-size:clamp(18px,1.5vw,21px);line-height:1.2;letter-spacing:0;opacity:.9}
+.nav > .micro{font-family:var(--display);font-style:italic;font-size:17px}
+.hero .tag,.status strong,.sky .zone{font-family:var(--display)}
 main p{text-wrap:pretty}
 main .lede{font-size:clamp(17px,1.3vw,19px);line-height:1.6;max-width:42ch}
 main form{border-top:none;margin-top:0}
@@ -110,63 +111,64 @@ main .btn:hover{background:var(--clay)}
 .grain{position:relative;isolation:isolate}
 .grain::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.35;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .25  0 0 0 0 .18  0 0 0 .22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 
-/* 2. REEL: olive block, the slideshow */
-.reel{background:var(--olive);color:var(--cream);padding:clamp(80px,9vw,130px) 0}
-.reel .wrap{display:grid;grid-template-columns:1fr auto;gap:clamp(40px,7vw,120px);align-items:center}
-.reel .lede{margin-top:26px;opacity:.9}
-.reel .btn{margin-top:34px;background:var(--cream);color:var(--wine)}
-.reel .btn:hover{background:#fff}
-.stage{position:relative;width:min(420px,80vw)}
-.player{position:relative;aspect-ratio:3/4;overflow:hidden;background:#1f2c21;cursor:pointer}
-.player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s var(--ease)}
-.player video.fade{opacity:0}
-.bars{position:absolute;left:14px;right:14px;top:14px;display:flex;gap:6px;z-index:2}
-.bars span{flex:1;height:2px;background:rgba(246,227,207,.35);overflow:hidden}
-.bars i{display:block;height:100%;width:0;background:var(--cream)}
-.stage .still{position:absolute;left:-34%;bottom:-48px;width:46%;aspect-ratio:1/1;outline:10px solid var(--olive)}
-.stage figcaption{text-align:right;margin-top:16px;font-size:14px;font-style:italic;opacity:.8;min-height:20px}
-@media (max-width:860px){.reel .wrap{grid-template-columns:1fr}.stage{margin:0 auto}.stage .still{display:none}}
+/* 2. REEL: a row of clips that scrolls sideways */
+.reel{background:var(--olive);color:var(--cream);padding:clamp(80px,9vw,120px) 0 clamp(70px,8vw,110px);overflow:hidden}
+.reel .rhead{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}
+.rnav{display:flex;gap:10px}
+.rnav button{width:46px;height:46px;border-radius:9999px;border:1px solid rgba(239,230,214,.45);color:var(--cream);font-size:18px;line-height:1;transition:background-color .3s var(--ease),color .3s var(--ease)}
+.rnav button:hover{background:var(--cream);color:var(--olive)}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 max(var(--pad),calc((100vw - var(--measure))/2 + var(--pad)));scroll-padding:0 max(var(--pad),calc((100vw - var(--measure))/2 + var(--pad)))}
+.strip::-webkit-scrollbar{display:none}
+.clip{flex:0 0 clamp(230px,23vw,310px);scroll-snap-align:start}
+.clip .frame{aspect-ratio:3/4;background:#1f2c21}
+.clip video{width:100%;height:100%;object-fit:cover;display:block}
+.clip figcaption{margin-top:12px;font-size:15px;opacity:.85}
+@media (max-width:700px){.rnav{display:none}.clip{flex-basis:72vw}}
 
-/* 3. MENU on cream */
-.menu{background:var(--bg);padding:clamp(90px,10vw,140px) 0}
-.menu .hd{color:var(--clay)}
-.mhead{display:grid;grid-template-columns:1fr minmax(260px,400px);gap:30px 80px;align-items:end;margin-bottom:50px}
-.mhead .side p{font-size:16px;line-height:1.6;opacity:.85}
-.mhead .side .pill{margin-top:14px;display:inline-block}
-.tabs{display:flex;flex-wrap:wrap;gap:6px 32px;border-bottom:1px solid var(--rule);margin-bottom:56px}
-.tabs button{font-size:clamp(18px,1.6vw,22px);padding:0 0 14px;margin-bottom:-1px;border-bottom:2px solid transparent;opacity:.55;transition:opacity .3s var(--ease)}
-.tabs button:hover{opacity:.9}
-.tabs button[aria-selected="true"]{opacity:1;font-style:italic;border-bottom-color:var(--clay)}
-.mbody{display:grid;grid-template-columns:minmax(230px,.6fr) 1.6fr;gap:clamp(36px,6vw,96px);align-items:start}
-.mphoto{position:sticky;top:30px}
-.mphoto .frame{aspect-ratio:4/5}
-.mphoto figcaption{font-size:14px;font-style:italic;opacity:.7;margin-top:12px}
-.panel{columns:2;column-gap:clamp(36px,4.5vw,68px)}
-.panel .group{break-inside:avoid;margin-bottom:48px}
-.panel h3{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.05em;font-size:16px;color:var(--clay);margin-bottom:8px}
-.gnote{font-size:14px;opacity:.7;margin-bottom:6px;font-style:italic}
-.casenote{column-span:all;background:var(--band);padding:18px 22px;margin-bottom:40px;font-size:16px;line-height:1.5}
-.casenote i{opacity:.7}
+/* 3. MENU: their printed card, with + to order */
+.menu{background:#2E2118;padding:clamp(70px,8vw,110px) 0}
+.mtop{display:flex;justify-content:space-between;align-items:end;gap:24px 40px;flex-wrap:wrap;color:var(--cream);margin-bottom:28px}
+.mtop .micro{margin-bottom:6px}
+.mtop .hd{color:var(--cream)}
+.mtop .side{max-width:380px;font-size:16px;line-height:1.55;opacity:.85}
+.mtop .side .pill{display:inline-block;margin-top:10px}
+.mtabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0}
+.mtabs button{font-family:var(--display);font-size:clamp(15px,1.3vw,18px);text-transform:uppercase;letter-spacing:.04em;color:var(--cream);padding:14px 22px;opacity:.6;background:transparent;transition:opacity .3s var(--ease),background-color .3s var(--ease),color .3s var(--ease)}
+.mtabs button:hover{opacity:1}
+.mtabs button[aria-selected="true"]{opacity:1;background:#F4F1EB;color:#1E1A16}
+.card{background:#F4F1EB;color:#1E1A16;display:grid;grid-template-columns:1fr 1.02fr 1fr;gap:clamp(28px,4vw,64px);padding:clamp(34px,4.5vw,64px) clamp(24px,4vw,64px) clamp(40px,5vw,70px);--rule:#1E1A16}
+.mcol{min-width:0}
+.mg{margin-bottom:38px}
+.mg:last-child{margin-bottom:0}
+.mg h3{font-family:var(--display);font-weight:400;text-transform:uppercase;text-align:center;font-size:clamp(28px,2.6vw,40px);line-height:1;letter-spacing:-.005em;margin-bottom:22px}
+.mg h4{font-family:var(--display);font-weight:400;text-transform:uppercase;text-align:center;font-size:17px;letter-spacing:.02em;margin:4px 0 8px}
+.mg.subg{margin-bottom:22px}
+.mnote{text-align:center;font-size:14px;margin:-14px 0 14px}
+.mi{display:grid;grid-template-columns:1fr auto 26px;column-gap:12px;align-items:baseline;padding:6px 0}
+.mi b{font-family:var(--label);font-weight:600;text-transform:uppercase;font-size:14.5px;letter-spacing:.035em;line-height:1.35}
+.mi .p{font-family:var(--label);font-weight:600;font-size:14.5px;white-space:nowrap;letter-spacing:.02em}
+.mi small{grid-column:1/3;font-size:13.5px;line-height:1.45;margin-top:2px;max-width:40ch;opacity:.9}
+.mi.off b,.mi.off .p{text-decoration:line-through;opacity:.45}
+.offtag{grid-column:3;font-size:11px;opacity:.6;align-self:center}
+.add{width:24px;height:24px;border-radius:9999px;background:#1E1A16;color:#F4F1EB;font-family:var(--label);font-weight:600;font-size:15px;line-height:1;display:inline-flex;align-items:center;justify-content:center;align-self:center;transition:background-color .25s var(--ease),transform .25s var(--ease)}
+.add:hover{background:var(--clay);transform:scale(1.08)}
+.add.done{background:var(--olive);width:auto;padding:0 8px;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.vars{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.addv{font-family:var(--label);font-weight:600;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;padding:6px 11px;border-radius:9999px;background:#E6E0D4;transition:background-color .25s var(--ease),color .25s var(--ease)}
+.addv:hover{background:#1E1A16;color:#F4F1EB}
+.addv.done{background:var(--olive);color:#F4F1EB}
+.mid .mtitle{border-top:1.5px solid #1E1A16;border-bottom:1.5px solid #1E1A16;padding:22px 0 26px;margin:0 10px 22px;text-align:center}
+.mid .mtitle h2{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(36px,3.6vw,60px);line-height:1.08;letter-spacing:-.01em}
+.mid .inset{background:#FFFFFF;padding:clamp(20px,2.4vw,32px) clamp(18px,2vw,28px)}
+.house{display:grid;grid-template-columns:auto 1fr;column-gap:8px;margin:0 0 4px -4px}
+.house .hl{font-family:var(--label);font-size:10px;font-weight:500;width:1ch;word-break:break-all;line-height:1.55;text-transform:uppercase;text-align:center;align-self:center}
+.house > div{border-left:1px solid #1E1A16;padding-left:10px}
+.casenote{background:#E6E0D4;padding:12px 14px;margin:-8px 0 14px;font-size:14px;line-height:1.45}
+.casenote b{font-family:var(--label);font-weight:600;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:2px}
 .casenote s{opacity:.5}
-.item{display:grid;grid-template-columns:1fr auto;column-gap:14px;row-gap:2px;padding:11px 0;align-items:baseline}
-.item.can{grid-template-columns:1fr auto auto}
-.item b{font-weight:400;font-size:17px;display:flex;align-items:baseline;gap:10px;min-width:0}
-.item b::after{content:"";flex:1;min-width:16px;border-bottom:1px dotted var(--rule);transform:translateY(-4px)}
-.item .p{font-size:16px;white-space:nowrap}
-.item small{grid-column:1/-1;font-size:14px;opacity:.68;max-width:44ch;line-height:1.45;font-style:italic}
-.item.off b,.item.off .p{text-decoration:line-through;opacity:.45}
-.offtag{font-size:13px;font-style:italic;opacity:.6}
-.add{display:inline-flex;align-items:center;justify-content:center;font-size:14px;line-height:1;white-space:nowrap}
-.add.solo{width:26px;height:26px;border-radius:9999px;background:var(--wine);color:var(--cream);font-family:var(--mono);font-size:14px;align-self:center;transition:background-color .25s var(--ease)}
-.add.solo:hover{background:var(--clay)}
-.addrow{grid-column:1/-1;display:flex;gap:18px;flex-wrap:wrap;margin-top:6px;order:3}
-.addrow .add{gap:8px;font-style:italic}
-.addrow .add::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:9999px;background:var(--wine);color:var(--cream);font-style:normal;font-family:var(--mono);font-size:13px}
-.item.can:has(.addrow){grid-template-columns:1fr auto}
-.panel .fine{font-size:14px;font-style:italic;opacity:.7;column-span:all}
-html[data-mode="night"] main .add.solo,html[data-mode="night"] .addrow .add::before{background:var(--cream);color:var(--wine)}
-@media (max-width:1150px){.panel{columns:1}}
-@media (max-width:860px){.mhead{grid-template-columns:1fr}.mbody{grid-template-columns:1fr}.mphoto{display:none}.tabs{gap:4px 22px;overflow-x:auto;flex-wrap:nowrap}.tabs button{white-space:nowrap}}
+.mfine{grid-column:1/-1;text-align:center;font-size:13.5px;opacity:.75;border-top:1px solid #D8D0C1;padding-top:20px;margin-top:6px}
+@media (max-width:1000px){.card{grid-template-columns:1fr 1fr}.mid{grid-column:1/-1;order:-1}}
+@media (max-width:680px){.card{grid-template-columns:1fr}.mtabs button{flex:1;padding:12px 10px}}
 
 /* 4. QUOTE: oxblood block beside the green wall */
 .quote{display:grid;grid-template-columns:1fr 1fr;background:var(--wine);color:var(--cream);min-height:min(92vh,860px)}
@@ -189,7 +191,7 @@ html[data-mode="night"] main .add.solo,html[data-mode="night"] .addrow .add::bef
 .req{display:grid;grid-template-columns:1fr 1fr;gap:2px 26px;margin-top:44px}
 .field{display:flex;flex-direction:column;gap:2px;padding:12px 0 0}
 .field.full{grid-column:1/-1}
-.field label,.field .lbl{font-size:14px;font-style:italic;opacity:.7}
+.field label,.field .lbl{font-family:var(--label);font-weight:500;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
 .field input,.field textarea,.field select{font:inherit;font-size:17px;color:inherit;background:transparent;border:none;border-bottom:1px solid var(--rule);outline:none;width:100%;padding:8px 0;border-radius:0;transition:border-color .25s var(--ease)}
 .field input:focus,.field textarea:focus,.field select:focus{border-bottom-color:var(--clay)}
 .field textarea{resize:vertical;min-height:50px}
@@ -344,7 +346,7 @@ html[data-mode="night"] main .add.solo,html[data-mode="night"] .addrow .add::bef
   <span class="micro">Cafe, gelateria &amp; wine bar</span>
   <div class="links">
     <a href="#menu">Menu</a>
-    <a href="#menu" data-tab="Gelato">Gelato</a>
+    <a href="#menu" data-tab="food">Gelato</a>
     <a href="#cakes">Cakes</a>
     <a href="#visit">Visit</a>
     <div class="toggle" role="group" aria-label="Day or night view">
@@ -377,42 +379,28 @@ html[data-mode="night"] main .add.solo,html[data-mode="night"] .addrow .add::bef
 
 <main>
 
-<section class="reel" aria-label="Moments at Carpe Diem">
-  <div class="wrap">
-    <div>
-      <span class="micro">A day on Jefferson Street</span>
-      <h2 class="hd">Poured, scooped<br>and served by hand</h2>
-      <p class="lede">Matcha with a cinnamon dusting, gelato from this morning's batch, cold foam poured slow. A coffee house, an Italian gelateria and a wine bar under one roof in Downtown Lafayette.</p>
-      <a class="btn" href="#menu">See the menu</a>
-    </div>
-    <figure class="stage">
-      <div class="player" id="player" aria-label="Slideshow of short clips from the cafe. Click for the next clip.">
-        <div class="bars" id="bars"></div>
-        <video id="reelA" muted playsinline preload="metadata" poster="video/clip1.jpg"></video>
-      </div>
-      <div class="frame still"><img src="img/latte-window.jpg" alt="A latte with a rosetta on the concrete window ledge" loading="lazy"></div>
-      <figcaption id="reelCap"></figcaption>
-    </figure>
+<section class="reel" aria-label="Short clips from the cafe">
+  <div class="wrap rhead">
+    <div><span class="micro">From our Instagram</span><h2 class="hd">A day on Jefferson Street</h2></div>
+    <div class="rnav"><button type="button" id="rPrev" aria-label="Previous clips">&larr;</button><button type="button" id="rNext" aria-label="Next clips">&rarr;</button></div>
+  </div>
+  <div class="strip" id="strip">
+    <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip2.jpg" src="video/clip2.mp4"></video></div><figcaption>Matcha, cinnamon on top</figcaption></figure>
+    <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip3.jpg" src="video/clip3.mp4"></video></div><figcaption>Gelato from this morning's batch</figcaption></figure>
+    <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip5.jpg" src="video/clip5.mp4"></video></div><figcaption>New: gelato macaron sandwiches</figcaption></figure>
+    <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip4.jpg" src="video/clip4.mp4"></video></div><figcaption>Cold foam, poured slow</figcaption></figure>
+    <figure class="clip"><div class="frame"><video muted loop playsinline preload="none" poster="video/clip1.jpg" src="video/clip1.mp4"></video></div><figcaption>A slow coffee and a slice of cake</figcaption></figure>
   </div>
 </section>
 
-<section class="menu grain" id="menu">
+<section class="menu" id="menu">
   <div class="wrap">
-    <div class="mhead">
-      <div><span class="micro">Order ahead, pick up at the counter</span><h2 class="hd">The menu</h2></div>
-      <div class="side">
-        <p>Tap + on anything from the counter, pick a time and pay when you collect. We text you when it's ready.</p>
-        <a class="pill" href="#menu" data-open-order>View your order</a>
-      </div>
+    <div class="mtop">
+      <div><span class="micro">Order ahead, pick up at the counter</span><h2 class="hd">Menu</h2></div>
+      <p class="side">Tap + on anything you'd like, pick a time and pay when you collect. We text you when it's ready.<br><a class="pill" href="#menu" data-open-order>View your order</a></p>
     </div>
-    <div class="tabs" role="tablist" id="tabs" aria-label="Menu sections"></div>
-    <div class="mbody">
-      <figure class="mphoto"><div class="frame"><img class="ph" id="mphoto" src="img/cappuccino.jpg" alt="" loading="lazy"></div><figcaption id="mcap"></figcaption></figure>
-      <div class="panel" id="panel" role="tabpanel" aria-live="polite">
-        <span class="skel block" style="width:40%;height:30px"></span>
-        <span class="skel block"></span><span class="skel block"></span><span class="skel block" style="width:70%"></span>
-      </div>
-    </div>
+    <div class="mtabs" role="tablist" id="tabs" aria-label="Menu pages"></div>
+    <div class="card" id="card" role="tabpanel" aria-live="polite"></div>
   </div>
 </section>
 
@@ -553,45 +541,56 @@ html[data-mode="night"] main .add.solo,html[data-mode="night"] .addrow .add::bef
    DATA: the counter menu
    ============================================================ */
 function I(n,p,d,x){ var o = {n:n,p:p,d:d||''}; if (x) for (var k in x) o[k]=x[k]; return o; }
-var MENU = {
-  "Coffee": [
-    {g:"Coffee", items:[I("Drip",3.5),I("Espresso",3.25),I("Traditional macchiato",3.5,"Medium or dark roast espresso topped with a dollop of milk foam"),I("Cortado",3.65),I("Cappuccino",4.5),I("Latte",4.75),I("Cold drip",5),I("Americano",3.25),I("Cafe au lait",3.5),I("Frappe",6.35),I("Shaken espresso",5.45)]},
-    {g:"Specialty drinks", items:[I("Bee Sting",6,"Vanilla cold brew with a salted honey cold foam"),I("Matcha frappe",6.35),I("Onyx Delight cappuccino",5.5,"Subtle flavours of honey, cinnamon and vanilla bean")]},
-    {g:"Milks and extras", extra:true, items:[I("Whole milk","Incl."),I("Organic half and half",1),I("Non dairy milks",1,"Oat, pistachio, almond, cashew"),I("Cold foam",2,"Plain, or with any of our syrups"),I("House made syrups",0.75,"Lavender honey, burnt honey, cardamom, orange clove, vanilla bean"),I("Classic syrups",0.5,"Vanilla, caramel, hazelnut, dark or white mocha, spiced brown sugar, cinnamon, apple, strawberry, raspberry. Sugar free vanilla, caramel and hazelnut")]}
-  ],
-  "Tea & cocoa": [
-    {g:"Tea lattes", items:[I("Onyx matcha latte",5),I("Chai latte",5,"Our sweet and spicy Onyx chai"),I("London fog",5),I("Spiced London fog",5),I("Onyx golden milk",5,"Turmeric, cinnamon, ginger and black pepper. Caffeine free")]},
-    {g:"Onyx tea, by the pot", note:"Black, oolong, green or herbal, 4.00", items:[I("Iced ginger hibiscus",4),I("Black tea",4,"Earl grey, golden monkey, Onyx tealight, gochujang chai"),I("Oolong",4,"Ginseng oolong"),I("Green tea",4,"Genmaicha, mao jian"),I("Herbal tea",4,"Peppermint yerba mate, raspberry hibiscus, lavender chamomile, rooibos")]},
-    {g:"Hot cocoa", items:[I("Classic cocoa",6),I("Italian cocoa",6),I("Vegan cocoa",6),I("White cocoa",6),I("Absinthe hot cocoa",10,"",{bar:true})]}
-  ],
-  "Crêpes & food": [
-    {g:"Savory crêpes", items:[I("Egg, prosciutto and gouda",10),I("Egg, roasted veggie and gouda",12,"Tomatoes, bell peppers, zucchini and onion")]},
-    {g:"Sweet crêpes", items:[I("Caramel and toasted almond",10,"Topped with a scoop of Biscoff gelato"),I("Spiced apple and caramel",10,"Topped with a scoop of vanilla gelato"),I("Banana foster and pecans",10,"Topped with a scoop of vanilla gelato"),I("Chocolate hazelnut and banana",10)]},
-    {g:"Sandwiches", items:[I("Gouda and prosciutto",6,"Add an egg before 2 PM for 2.00"),I("Chicken salad with chips",8,"Chicken, apples, celery, dried cranberries, pecans, sour cream and mayo")]},
-    {g:"Also", items:[I("Berry banana smoothie",8,"Sweetened with honey, made with your choice of milk")]}
-  ],
-  "Gelato": [
-    {g:"From the case", items:[I("Gelato",null,"Flavours from today's case",{v:[["1 scoop",4.5],["2 scoops",5.5],["3 scoops",7]]}),I("Affogato",null,"Gelato topped with espresso",{v:[["2 scoops",7.5],["3 scoops",10]]}),I("Milkshake",8.5,"Add 2 oz of espresso for 2.00"),I("Coke or root beer float",7)]}
-  ]
-};
-var BAR = [
-  {g:"Cocktails", items:[I("Espresso martini",10,"Vanilla vodka, Madagascar vanilla liqueur, coffee liqueur and espresso"),I("Irish coffee",8,"Jameson, drip coffee, simple syrup, topped with shaken cream"),I("Old fashioned",10,"Bourbon, Angostura, simple syrup, orange twist and a Luxardo cherry"),I("Spiced old fashioned",10,"Sweetened with house made cardamom syrup"),I("Blood and sand",10,"Monkey Shoulder scotch, sour cherry liqueur, sweet vermouth, fresh orange"),I("French 75",10,"Gin, fresh lemon, simple syrup, topped with cava"),I("Lavender honey French 75",10,"Sweetened with our house made lavender honey syrup"),I("Coolcumber martini",10,"Gin, house made cucumber syrup and fresh lime")]},
-  {g:"Red wine", note:"Glass / bottle", items:[I("Bordeaux Rouge, Mary Taylor","7 / 36","Black cherry, plum and subtle herbs. Medium bodied, a clean mineral finish"),I("Portuguese blend, The Lab","5.50 / 27","Ripe blackberry, plum and a touch of spice. Soft tannins")]},
-  {g:"White and sparkling", note:"Glass / bottle", items:[I("Bordeaux Blanc, Mary Taylor","7 / 36","Citrus, green apple and white flowers. Sauvignon Blanc and Semillon"),I("Vinho Verde, Encostas do Lima","6 / 32","Light, crisp and slightly effervescent"),I("Cava, Arte Latino Brut","6 / 24","Green apple, citrus, a touch of tropical fruit")]},
-  {g:"Beer", items:[I("Parish Envie APA",4),I("Paradise Park",5)]}
+var MILK = "Oat, pistachio, almond or cashew";
+var PAGES = [
+  {key:'drinks', label:'Coffee, tea & hot cocoa', title:'Coffee, tea, <span>&amp;</span> hot cocoa', cols:[
+    [
+      {g:"Coffee", items:[I("Drip",3.5),I("Espresso",3.25),I("Traditional macchiato",3.5,"Medium or dark roast espresso topped with a dollop of milk foam"),I("Cortado",3.65),I("Cappuccino",4.5),I("Latte",4.75),I("Cold drip",5),I("Americano",3.25),I("Cafe au lait",3.5),I("Frappe",6.35),I("Shaken espresso",5.45)]},
+      {g:"Tea lattes", items:[I("Onyx matcha latte",5),I("Chai latte",5,"Choose between our sweet and spicy Onyx chai"),I("London fog",5),I("Spiced London fog",5),I("Onyx golden milk",5,"A cozy, calming blend of turmeric, cinnamon, ginger and black pepper. Caffeine free")]},
+      {g:"Specialty drinks", items:[I("Bee Sting",6,"Vanilla cold brew with a salted honey cold foam"),I("Matcha frappe",6.35),I("Onyx Delight cappuccino",5.5,"Subtle flavours of honey, cinnamon and vanilla bean")]}
+    ],
+    [
+      {g:"Milk options", items:[I("Whole milk","Incl.","",{x:1}),I("Organic half and half",1,"",{x:1}),I("Non dairy milk",1,MILK,{x:1,v:[["Oat",1],["Pistachio",1],["Almond",1],["Cashew",1]]}),I("Cold foam",2,"Plain, or add any of our flavoured syrups",{x:1})]},
+      {g:"Flavour add-ins", house:["Lavender honey","Burnt honey","Cardamom","Orange clove","Vanilla bean"], items:[I("Lavender honey",.75,"",{x:1}),I("Burnt honey",.75,"",{x:1}),I("Cardamom",.75,"",{x:1}),I("Orange clove",.75,"",{x:1}),I("Vanilla bean",.75,"",{x:1}),I("Vanilla",.5,"",{x:1}),I("Caramel",.5,"",{x:1}),I("Hazelnut",.5,"",{x:1}),I("Dark or white mocha",.5,"",{x:1}),I("Spiced brown sugar",.5,"",{x:1}),I("Cinnamon",.5,"",{x:1}),I("Apple",.5,"",{x:1}),I("Strawberry",.5,"",{x:1}),I("Raspberry",.5,"",{x:1}),I("Sugar free",.5,"Vanilla, caramel and hazelnut",{x:1})]}
+    ],
+    [
+      {g:"Onyx tea", items:[I("Iced ginger hibiscus tea",4)]},
+      {sub:"Black ... 4.00", items:[I("Earl Grey",4,"Floral / Grapefruit pith / Vibrant ... 72mg caffeine"),I("Golden Monkey",4,"Walnut / Cocoa / Honeyed peach ... 72mg caffeine"),I("Onyx Tealight",4,"Honey / Cinnamon / Malt / Creamy ... 50mg caffeine"),I("Gochujang chai",4,"Ginger / Chestnut / Red pepper ... 48mg caffeine")]},
+      {sub:"Oolong ... 4.00", items:[I("Ginseng oolong",4,"Maple / Osmanthus / Sweet mint ... 60mg caffeine")]},
+      {sub:"Green ... 4.00", items:[I("Genmaicha",4,"Toasted nut / Steamed rice / Umami ... 60mg caffeine"),I("Mao Jian",4,"Wildflower / Hazelnut / Fresh ... 60mg caffeine")]},
+      {sub:"Herbal ... 4.00", items:[I("Peppermint yerba mate",4,"Mint / Sweet menthol / Cool and creamy ... 60mg caffeine"),I("Raspberry hibiscus",4,"Sweet lemon / Raspberry / Floral ... caffeine free"),I("Lavender chamomile rooibos",4,"Floral / Apple / Honey / Silky ... caffeine free")]},
+      {g:"Hot cocoa", note:"Try it with any of our flavoured syrups!", items:[I("Classic",6),I("Italian",6),I("Vegan",6),I("White cocoa",6),I("Absinthe hot cocoa",10,"",{bar:1})]}
+    ]
+  ]},
+  {key:'food', label:'Food, gelato & bar drinks', title:'Food, gelato, <span>&amp;</span> bar drinks', cols:[
+    [
+      {g:"Cocktails", bar:1, items:[I("Espresso martini",10,"Vanilla vodka, Madagascar vanilla liqueur, coffee liqueur and espresso"),I("Irish coffee",8,"Jameson whiskey, drip coffee, simple syrup, topped with a shaken cream"),I("Old fashioned",10,"Bourbon whiskey, Angostura bitters, simple syrup, an orange twist and a Luxardo cherry"),I("Spiced old fashioned",10,"Our classic old fashioned sweetened with house made cardamom syrup"),I("Blood and sand",10,"Monkey Shoulder scotch, sour cherry liqueur, sweet vermouth and fresh orange juice"),I("French 75",10,"Gin, fresh lemon juice, simple syrup, topped with cava"),I("Lavender honey French 75",10,"Our classic French 75 sweetened with our house made lavender honey syrup"),I("Coolcumber martini",10,"Gin, house made cucumber syrup and fresh lime juice")]},
+      {g:"Gelato", gelato:1, items:[I("Gelato",null,"1, 2 or 3 scoops",{v:[["1 scoop",4.5],["2 scoops",5.5],["3 scoops",7]]}),I("Affogato",null,"2 or 3 scoops of gelato topped with espresso",{v:[["2 scoops",7.5],["3 scoops",10]]}),I("Milkshake",8.5,"Add 2 oz of espresso for 2.00"),I("Coke or root beer float",7)]}
+    ],
+    [
+      {items:[I("Berry banana smoothie",8,"Sweetened with honey and made with your choice of any of our milk options")]},
+      {g:"Sandwiches", items:[I("Gouda and prosciutto",6,"Add an egg before 2 PM for 2.00"),I("Chicken salad with chips",8,"Chicken, apples, celery, dried cranberries, pecans, sour cream and mayo")]},
+      {g:"Savory crêpes", items:[I("Egg, prosciutto and gouda",10),I("Egg, roasted veggie and gouda",12,"Tomatoes, bell peppers, zucchini and onion")]},
+      {g:"Sweet crêpes", items:[I("Caramel and toasted almond",10,"Topped with a scoop of Biscoff gelato"),I("Spiced apple and caramel",10,"Topped with a scoop of vanilla gelato"),I("Banana foster and pecans",10,"Topped with a scoop of vanilla gelato"),I("Chocolate hazelnut and banana",10)]}
+    ],
+    [
+      {g:"Red wine", bar:1, items:[I("Bordeaux Rouge, Mary Taylor","7 / 36","Classic Bordeaux blend with notes of black cherry, plum and subtle herbs. Medium bodied, smooth and food friendly with a clean, mineral finish"),I("Portuguese blend, The Lab","5.50 / 27","Smooth and juicy with ripe blackberry, plum and a touch of spice. Medium bodied with soft tannins")]},
+      {g:"White wine", bar:1, items:[I("Bordeaux Blanc, Mary Taylor","7 / 36","Fresh and zesty with notes of citrus, green apple and white flowers. A classic dry white blend of Sauvignon Blanc and Semillon, crisp and aromatic"),I("Vinho Verde, Encostas do Lima","6 / 32","Light, crisp and slightly effervescent with notes of green apple, citrus and a touch of tropical fruit. Medium dry with refreshing acidity"),I("Cava, Arte Latino Brut","6 / 24","Light, crisp and slightly effervescent with notes of green apple, citrus and a touch of tropical fruit")]},
+      {g:"Beer", bar:1, items:[I("Parish Envie APA",4),I("Paradise Park",5)]}
+    ]
+  ]}
 ];
-MENU["Wine & bar"] = BAR;
-var PHOTO = {"Coffee":"img/cappuccino.jpg","Tea & cocoa":"img/matcha.jpg","Crêpes & food":"img/crepe.jpg","Gelato":"img/gelato-hat.jpg","Wine & bar":"img/bar.jpg"};
-var CAP = {"Coffee":"A cappuccino with a dusting of cocoa.","Tea & cocoa":"Apple cinnamon matcha latte.","Crêpes & food":"Egg, prosciutto and gouda.","Gelato":"A scoop at the booth, made in house.","Wine & bar":"The bar, lit for the evening."};
 var ITEMS = {};
 function slug(s){ return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
-Object.keys(MENU).forEach(function(tab){
-  MENU[tab].forEach(function(gr){ gr.items.forEach(function(it){
-    it.id = slug(it.n); it.tab = tab;
-    it.can = tab !== "Wine & bar" && !gr.extra && !it.bar && (typeof it.p === 'number' || it.v);
+PAGES.forEach(function(pg){ pg.cols.forEach(function(col){ var sec = ''; col.forEach(function(gr){
+  sec = gr.g || (gr.sub ? 'Onyx tea' : sec || 'Smoothie');
+  gr.items.forEach(function(it){
+    it.id = slug(it.n); if (ITEMS[it.id]) it.id += '-' + slug(sec);
+    it.tab = sec;
+    it.can = !gr.bar && !it.bar && ((typeof it.p === 'number' && it.p > 0) || !!it.v);
     ITEMS[it.id] = it;
-  }); });
-});
+  });
+}); }); });
 
 /* ============================================================
    HELPERS
@@ -671,43 +670,52 @@ function priceOf(it, variant){
 /* ============================================================
    MENU with ordering
    ============================================================ */
-var tabs = $('#tabs'), panel = $('#panel'), mph = $('#mphoto'), current = 'Coffee';
-function itemHTML(it, sub){
+var tabs = $('#tabs'), card = $('#card'), current = 'drinks';
+function priceText(it){
+  if (it.v) { var ps = it.v.map(function(v){ return num(priceOf(it,v[0])); }); var u = ps.filter(function(x,i){ return ps.indexOf(x) === i; }); return u.length === 1 ? u[0] : ps.join(' / '); }
+  return typeof it.p === 'number' ? (it.p ? num(priceOf(it)) : '') : esc(it.p);
+}
+function itemHTML(it){
   var S = load(), off = S.off[it.id];
-  var pr;
-  if (it.v) pr = it.v.map(function(v){ return num(priceOf(it,v[0])); }).join(' / ');
-  else pr = typeof it.p === 'number' ? (it.p ? num(priceOf(it)) : '') : esc(it.p);
-  var h = '<div class="item' + (it.can && !sub ? ' can' : '') + (off ? ' off' : '') + '"><b>' + esc(it.n) + '</b><span class="p">' + pr + '</span>';
-  if (it.can && !sub) {
-    if (off) h += '<span class="offtag">Sold out</span>';
-    else if (it.v) h += '<span class="addrow">' + it.v.map(function(v){ return '<button class="add" data-add="'+it.id+'" data-var="'+esc(v[0])+'" aria-label="Add '+esc(it.n)+', '+esc(v[0])+'">+ '+esc(v[0])+'</button>'; }).join('') + '</span>';
-    else h += '<button class="add solo" data-add="'+it.id+'" aria-label="Add '+esc(it.n)+'">+</button>';
-  }
+  var h = '<div class="mi' + (off ? ' off' : '') + '"><b>' + esc(it.n) + '</b><span class="p">' + priceText(it) + '</span>';
+  if (it.can && off) h += '<span class="offtag">Sold out</span>';
+  else if (it.can && !it.v) h += '<button class="add" type="button" data-add="'+it.id+'" aria-label="Add '+esc(it.n)+' to your order">+</button>';
+  else h += '<span></span>';
   if (it.d) h += '<small>' + esc(it.d) + '</small>';
+  if (it.can && it.v && !off) h += '<span class="vars">' + it.v.map(function(v){ return '<button class="addv" type="button" data-add="'+it.id+'" data-var="'+esc(v[0])+'" aria-label="Add '+esc(it.n)+', '+esc(v[0])+'">+ '+esc(v[0])+'</button>'; }).join('') + '</span>';
   return h + '</div>';
 }
-function groupHTML(gr, sub){
-  var h = '<div class="group">' + (sub ? '<h4>'+esc(gr.g)+'</h4>' : '<h3>'+esc(gr.g)+'</h3>');
-  if (gr.note) h += '<p class="gnote">'+esc(gr.note)+'</p>';
-  if (!sub && !gr.note) h += '<div style="height:14px"></div>';
-  gr.items.forEach(function(it){ h += itemHTML(it, sub); });
+function caseHTML(){
+  var S = load();
+  return '<p class="casenote"><b>In the case today</b>' + (S.flavours.length ? S.flavours.map(function(f){ return f.out ? '<s>'+esc(f.n)+'</s>' : esc(f.n); }).join(', ') : 'Being filled, check back soon') + '</p>';
+}
+function groupHTML(gr){
+  var h = '<div class="mg' + (gr.sub ? ' subg' : '') + '">';
+  if (gr.g) h += '<h3>' + esc(gr.g) + '</h3>';
+  if (gr.sub) h += '<h4>' + esc(gr.sub) + '</h4>';
+  if (gr.note) h += '<p class="mnote">' + esc(gr.note) + '</p>';
+  if (gr.gelato) h += caseHTML();
+  if (gr.house) {
+    var hs = gr.items.filter(function(it){ return gr.house.indexOf(it.n) > -1; }), rest = gr.items.filter(function(it){ return gr.house.indexOf(it.n) < 0; });
+    h += '<div class="house"><span class="hl" aria-hidden="true">Housemade</span><div>' + hs.map(itemHTML).join('') + '</div></div>' + rest.map(itemHTML).join('');
+  } else h += gr.items.map(itemHTML).join('');
   return h + '</div>';
 }
 function renderMenu(){
-  var S0 = load(), cn = current === 'Gelato' ? '<p class="casenote"><i>In the case today:</i> ' + (S0.flavours.length ? S0.flavours.map(function(f){ return f.out ? '<s>'+esc(f.n)+'</s>' : esc(f.n); }).join(', ') : 'being filled, check back soon') + '.</p>' : '';
-  panel.innerHTML = cn + MENU[current].map(function(g){ return groupHTML(g,false); }).join('') +
-    (current === 'Wine & bar' ? '<p class="fine">Drinks from the bar are served in house only, 21 and over, and are not sold online.</p>' : '');
-  mph.src = PHOTO[current]; var mc = $('#mcap'); if (mc) mc.textContent = CAP[current] || '';
-  $$('button', tabs).forEach(function(b){ b.setAttribute('aria-selected', b.dataset.n === current ? 'true':'false'); });
+  var pg = PAGES.filter(function(p){ return p.key === current; })[0];
+  card.innerHTML = pg.cols.map(function(col, i){
+    if (i === 1) return '<div class="mcol mid"><div class="mtitle"><h2>' + pg.title + '</h2></div><div class="inset">' + col.map(groupHTML).join('') + '</div></div>';
+    return '<div class="mcol">' + col.map(groupHTML).join('') + '</div>';
+  }).join('') + '<p class="mfine">' + (current === 'food' ? 'Cocktails, wine and beer are served in house only, 21 and over with ID, and are not sold online.' : 'Add milks and syrups to your order here, then say which drink they go with in the notes.') + '</p>';
+  $$('button', tabs).forEach(function(b){ b.setAttribute('aria-selected', b.dataset.n === current ? 'true' : 'false'); });
 }
-Object.keys(MENU).forEach(function(n,i){
+PAGES.forEach(function(pg){
   var b = document.createElement('button');
-  b.type='button'; b.setAttribute('role','tab'); b.dataset.n = n;
-  b.textContent = n;
-  b.addEventListener('click', function(){ current = n; renderMenu(); });
+  b.type = 'button'; b.setAttribute('role','tab'); b.dataset.n = pg.key; b.textContent = pg.label;
+  b.addEventListener('click', function(){ current = pg.key; renderMenu(); });
   tabs.appendChild(b);
 });
-function renderBar(){ if (!$('#barList')) return; $('#barList').innerHTML = BAR.map(function(g){ return groupHTML(g,true); }).join(''); }
+function renderBar(){}
 
 /* ============================================================
    CART + ORDER AHEAD
@@ -725,7 +733,7 @@ document.addEventListener('click', function(e){
     var line = cart.filter(function(l){ return l.id === it.id && l.variant === v; })[0];
     if (line) line.qty++; else cart.push({id:it.id, name:it.n, variant:v, price:priceOf(it, v), qty:1});
     saveCart(); renderCartPill();
-    a.textContent = 'Added'; setTimeout(function(){ renderMenu(); }, 700);
+    a.textContent = 'Added'; a.classList.add('done'); setTimeout(function(){ renderMenu(); }, 900);
     return;
   }
   if (e.target.closest('[data-open-order]')) { e.preventDefault(); openDrawer(mine && !cart.length ? 'track' : 'cart'); }
@@ -1081,31 +1089,22 @@ document.addEventListener('click', function(e){
 }, true);
 
 /* ============================================================
-   VIDEO SLIDESHOW
+   VIDEO ROW: each clip plays while it's on screen
    ============================================================ */
 (function(){
-  var CLIPS = [['video/clip2.mp4','video/clip2.jpg','Matcha, cinnamon on top.'],['video/clip3.mp4','video/clip3.jpg','Gelato from this morning\'s batch.'],['video/clip5.mp4','video/clip5.jpg','New: gelato macaron sandwiches.'],['video/clip4.mp4','video/clip4.jpg','Cold foam, poured slow.'],['video/clip1.mp4','video/clip1.jpg','A slow coffee and a slice of cake.']];
-  var v = $('#reelA'), bars = $('#bars'), cap = $('#reelCap'), player = $('#player'); if (!v) return;
-  var i = 0, visible = false, still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  bars.innerHTML = CLIPS.map(function(){ return '<span><i></i></span>'; }).join('');
-  var fills = $$('i', bars);
-  function show(n){
-    i = (n + CLIPS.length) % CLIPS.length;
-    fills.forEach(function(f,k){ f.style.width = k < i ? '100%' : '0'; });
-    v.classList.add('fade');
-    setTimeout(function(){
-      v.src = CLIPS[i][0]; v.poster = CLIPS[i][1]; cap.textContent = CLIPS[i][2];
-      v.classList.remove('fade');
-      if (visible && !still) { var pr = v.play(); if (pr && pr.catch) pr.catch(function(){}); }
-    }, 250);
+  var strip = $('#strip'); if (!strip) return;
+  var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vids = $$('video', strip);
+  if ('IntersectionObserver' in window && !still) {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){
+      var v = e.target;
+      if (e.isIntersecting) { var pr = v.play(); if (pr && pr.catch) pr.catch(function(){}); } else v.pause();
+    }); }, {threshold:.6});
+    vids.forEach(function(v){ io.observe(v); });
   }
-  v.addEventListener('timeupdate', function(){ if (v.duration) fills[i].style.width = (v.currentTime / v.duration * 100) + '%'; });
-  v.addEventListener('ended', function(){ show(i + 1); });
-  player.addEventListener('click', function(){ if (still && v.paused) { v.play(); return; } show(i + 1); });
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function(es){ es.forEach(function(e){ visible = e.isIntersecting; if (visible && !still) { var pr = v.play(); if (pr && pr.catch) pr.catch(function(){}); } else v.pause(); }); }, {threshold:.35}).observe(player);
-  } else visible = true;
-  show(0);
+  vids.forEach(function(v){ v.addEventListener('click', function(){ if (v.paused) v.play(); else v.pause(); }); });
+  function step(d){ var c = strip.querySelector('.clip'); strip.scrollBy({left: d * (c.offsetWidth + 16) * 2, behavior:'smooth'}); }
+  $('#rPrev').onclick = function(){ step(-1); }; $('#rNext').onclick = function(){ step(1); };
 })();
 
 load(); renderAll(); route();
